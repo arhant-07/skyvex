@@ -13,17 +13,17 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.skyvexit.com/"> <!-- TODO: Replace with actual URL -->
+    <meta property="og:url" content="https://www.skyvexit.com/">
     <meta property="og:title" content="Skyvex IT Solutions - Empowering Global Innovation">
     <meta property="og:description" content="Delivering cutting-edge technology solutions for your business growth, from Bangalore to the USA.">
-    <meta property="og:image" content="https://www.skyvexit.com/og-image.jpg"> <!-- TODO: Replace with actual image URL -->
+    <meta property="og:image" content="assets/og-image.jpg"> <!-- Ensure you have an 'og-image.jpg' in an 'assets' folder -->
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.skyvexit.com/"> <!-- TODO: Replace with actual URL -->
+    <meta property="twitter:url" content="https://www.skyvexit.com/">
     <meta property="twitter:title" content="Skyvex IT Solutions - Empowering Global Innovation">
     <meta property="twitter:description" content="Delivering cutting-edge technology solutions for your business growth, from Bangalore to the USA.">
-    <meta property="twitter:image" content="https://www.skyvexit.com/twitter-image.jpg"> <!-- TODO: Replace with actual image URL -->
+    <meta property="twitter:image" content="assets/twitter-image.jpg"> <!-- Ensure you have a 'twitter-image.jpg' in an 'assets' folder -->
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -31,104 +31,151 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.skyvexit.com/"> <!-- TODO: Replace with actual URL -->
+    <link rel="canonical" href="https://www.skyvexit.com/">
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#2563EB">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- Stylesheets and Scripts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom styles */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('image.webp') no-repeat center center;
-            background-size: cover;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        /* Scroll Animation */
-        .scroll-animate {
-            opacity: 0;
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .scroll-animate.is-visible {
-            opacity: 1;
-            transform: none;
-        }
-        .scroll-fade-up {
-            transform: translateY(40px);
-        }
-        .scroll-fade-left {
-            transform: translateX(-40px);
-        }
-        .scroll-fade-right {
-            transform: translateX(40px);
-        }
-        .scroll-zoom-in {
-            transform: scale(0.9);
-        }
-    </style>
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Skyvex IT Solutions",
+      "url": "https://www.skyvexit.com/",
+      "logo": "https://www.skyvexit.com/SKYVEX.png",
+      "image": "https://www.skyvexit.com/assets/og-image.jpg",
+      "description": "Skyvex IT Solutions delivers cutting-edge technology solutions including custom software, web/mobile apps, cloud architecture, and AI/ML for businesses worldwide.",
+      "foundingDate": "2019",
+      "founder": {
+        "@type": "Person",
+        "name": "Ms. Richhi Pradeep Bajpai"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Tech Park",
+        "addressLocality": "Bangalore",
+        "addressRegion": "Karnataka",
+        "postalCode": "560001",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-12345-67890",
+        "contactType": "customer service",
+        "email": "info@skyvexit.com",
+        "areaServed": ["IN", "US"],
+        "availableLanguage": ["en-US", "en-IN"]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/skyvex-it-solutions",
+        "https://twitter.com/skyvex",
+        "https://www.facebook.com/skyvex",
+        "https://www.instagram.com/skyvex"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Technology Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software Development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web & Mobile App Development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud Architecture & DevOps" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Data Analytics & BI" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI/ML-Based Solutions" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Technical Consulting" } }
+        ]
+      }
+    }
+    </script>
 </head>
-<body class="font-sans bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-30">
-        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+<body class="bg-gray-50">
+    <!-- =================================================================== -->
+    <!-- Preloader Start -->
+    <!-- =================================================================== -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- Navigation Start -->
+    <!-- =================================================================== -->
+    <nav id="main-nav" class="sticky top-0 z-30 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center transition-all duration-300">
             <div class="flex items-center">
-                <img src="SKYVEX.png" alt="Skyvex IT Solutions Company Logo" class="h-16 w-auto">
+                <img id="nav-logo" src="SKYVEX.png" alt="Skyvex IT Solutions Company Logo" class="h-16 w-auto transition-all duration-300" width="200" height="64" loading="eager">
             </div>
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-8" id="desktop-menu">
-                <a href="#home" class="text-lg text-blue-800 font-semibold">Home</a>
-                <a href="#services" class="text-lg text-gray-800 hover:text-blue-800 font-semibold">Services</a>
-                <a href="#industries" class="text-lg text-gray-800 hover:text-blue-800 font-semibold">Industries</a>
-                <a href="#testimonials" class="text-lg text-gray-800 hover:text-blue-800 font-semibold">Testimonials</a>
-                <a href="#contact" class="text-lg text-gray-800 hover:text-blue-800 font-semibold">Contact</a>
-                <a href="#about" class="text-lg text-gray-800 hover:text-blue-800 font-semibold">About Us</a>
+                <a href="#home" class="nav-link text-lg text-white font-bold transition-colors duration-300">Home</a>
+                <a href="#about" class="nav-link text-lg text-white hover:text-blue-300 font-bold transition-colors duration-300">About Us</a>
+                <a href="#services" class="nav-link text-lg text-white hover:text-blue-300 font-bold transition-colors duration-300">Services</a>
+                <a href="#process" class="nav-link text-lg text-white hover:text-blue-300 font-bold transition-colors duration-300">Our Process</a>
+                <a href="#industries" class="nav-link text-lg text-white hover:text-blue-300 font-bold transition-colors duration-300">Industries</a>
+                <a href="#testimonials" class="nav-link text-lg text-white hover:text-blue-300 font-bold transition-colors duration-300">Testimonials</a>
+                <a href="#contact" class="nav-link text-lg text-white hover:text-blue-300 font-bold transition-colors duration-300">Contact</a>
             </div>
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none transition-colors duration-300">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <a href="#home" class="block px-4 py-3 text-lg text-blue-800 font-semibold">Home</a>
-            <a href="#services" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-semibold">Services</a>
-            <a href="#industries" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-semibold">Industries</a>
-            <a href="#testimonials" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-semibold">Testimonials</a>
-            <a href="#contact" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-semibold">Contact</a>
-            <a href="#about" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-semibold">About Us</a>
+            <a href="#home" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-bold">Home</a>
+            <a href="#about" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-bold">About Us</a>
+            <a href="#services" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-bold">Services</a>
+            <a href="#process" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-bold">Our Process</a>
+            <a href="#industries" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-bold">Industries</a>
+            <a href="#testimonials" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-bold">Testimonials</a>
+            <a href="#contact" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-bold">Contact</a>
         </div>
     </nav>
+    <!-- =================================================================== -->
+    <!-- Navigation End -->
+    <!-- =================================================================== -->
 
-    <!-- Hero Section -->
-    <section id="home" class="hero text-white py-32 animate-fade-in">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">Empowering Global Innovation</h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">From Bangalore to the USA - Delivering cutting-edge technology solutions for your business growth</p>
-            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
-                Get Started
-            </button>
+    <!-- =================================================================== -->
+    <!-- Hero Section Start -->
+    <!-- =================================================================== -->
+    <!-- The hero section now uses a CSS background image with a parallax effect -->
+    <section id="home" class="hero text-white">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-slide-up" style="--delay: 0.1s;">Empowering Global Innovation</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-slide-up" style="--delay: 0.3s;">From Bangalore to the USA - Delivering cutting-edge technology solutions for your business growth</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 animate-slide-up" style="--delay: 0.5s;">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 hover:shadow-lg w-full sm:w-auto">
+                    Schedule a Consultation
+                </a>
+                <a href="#services" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 w-full sm:w-auto">
+                    Explore Our Services
+                </a>
+            </div>
         </div>
     </section>
+    <!-- =================================================================== -->
+    <!-- Hero Section End -->
+    <!-- =================================================================== -->
 
-    <!-- About Section -->
+    <!-- =================================================================== -->
+    <!-- About Section Start -->
+    <!-- =================================================================== -->
     <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 scroll-animate scroll-fade-up">About Skyvex IT Solutions</h2>
             
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/2 scroll-animate scroll-fade-left">
-                    <img src="https://placehold.co/600x400" alt="Skyvex IT Solutions team working in modern office space" class="rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" alt="A diverse team collaborating in a modern office" class="rounded-lg shadow-xl" width="1200" height="800" loading="lazy" decoding="async">
                 </div>
                 <div class="lg:w-1/2 scroll-animate scroll-fade-right">
                     <h3 class="text-2xl font-bold mb-6 ">Our Story</h3>
@@ -160,205 +207,333 @@
                 </div>
             </div>
 
+            <!-- Leadership Team Subsection -->
             <div class="mt-20">
                 <h3 class="text-2xl font-bold text-center mb-8 scroll-animate scroll-fade-up">Leadership Team</h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 justify-center gap-8">
                     <!-- Richhi -->
-                    <div class="group relative rounded-lg shadow-lg overflow-hidden scroll-animate scroll-fade-up">
-                        <img src="https://placehold.co/400x400/EBF4FF/7F9CF5?text=R" alt="Ms. Richhi Pradeep Bajpai" class="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                        <div class="absolute inset-0 p-6 flex flex-col justify-end text-white">
-                            <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                    <div class="group relative rounded-lg shadow-lg overflow-hidden scroll-animate scroll-fade-up text-white">
+                        <img src="Richhi.jpg" alt="Ms. Richhi Pradeep Bajpai" class="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105" width="600" height="800" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 to-transparent">
+                            <!-- Name and Title -->
+                            <div class="transform transition-transform duration-500 ease-in-out group-hover:-translate-y-24">
                                 <h4 class="font-bold text-2xl">Ms. Richhi Pradeep Bajpai</h4>
                                 <p class="text-blue-300 font-semibold">CEO & Founder</p>
                             </div>
-                            <div class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 mt-2">
+                            <!-- Details that fade in -->
+                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
+                                <div class="border-t border-blue-300/50 my-4"></div>
                                 <p class="text-gray-200 text-sm mb-4">Renowned for her visionary leadership and commitment to empowering young professionals.</p>
                                 <div class="flex space-x-4">
-                                    <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-linkedin-in text-xl"></i></a>
-                                    <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-twitter text-xl"></i></a>
+                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+                                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300"><i class="fab fa-twitter text-xl"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Sushmita -->
-                    <div class="group relative rounded-lg shadow-lg overflow-hidden scroll-animate scroll-fade-up" style="transition-delay: 100ms;">
-                        <img src="https://placehold.co/400x400/EBF4FF/7F9CF5?text=S" alt="Sushmita Singh" class="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                        <div class="absolute inset-0 p-6 flex flex-col justify-end text-white">
-                            <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                    <div class="group relative rounded-lg shadow-lg overflow-hidden scroll-animate scroll-fade-up text-white" style="transition-delay: 100ms;">
+                        <img src="Sushmita Singh.jpg" alt="Sushmita Singh" class="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105" width="600" height="800" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 to-transparent">
+                            <!-- Name and Title -->
+                            <div class="transform transition-transform duration-500 ease-in-out group-hover:-translate-y-24">
                                 <h4 class="font-bold text-2xl">Ms. Sushmita Singh</h4>
                                 <p class="text-blue-300 font-semibold">Co-founder & COO</p>
                             </div>
-                            <div class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 mt-2">
+                            <!-- Details that fade in -->
+                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
+                                <div class="border-t border-blue-300/50 my-4"></div>
                                 <p class="text-gray-200 text-sm mb-4">Combines strategic vision with operational excellence, driving innovation and ensuring smooth project execution.</p>
                                 <div class="flex space-x-4">
-                                    <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300"><i class="fab fa-linkedin-in text-xl"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Arhant -->
-                    <div class="group relative rounded-lg shadow-lg overflow-hidden scroll-animate scroll-fade-up" style="transition-delay: 200ms;">
-                        <img src="https://placehold.co/400x400/EBF4FF/7F9CF5?text=A" alt="Arhant Dhanvijay" class="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                        <div class="absolute inset-0 p-6 flex flex-col justify-end text-white">
-                            <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                    <div class="group relative rounded-lg shadow-lg overflow-hidden scroll-animate scroll-fade-up text-white" style="transition-delay: 200ms;">
+                        <img src="arhant.jpg" alt="Arhant Dhanvijay" class="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105" width="600" height="800" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 to-transparent">
+                            <!-- Name and Title -->
+                            <div class="transform transition-transform duration-500 ease-in-out group-hover:-translate-y-24">
                                 <h4 class="font-bold text-2xl">Mr. Arhant Dhanvijay</h4>
                                 <p class="text-blue-300 font-semibold">HR Manager & Developer</p>
                             </div>
-                            <div class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 mt-2">
+                            <!-- Details that fade in -->
+                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
+                                <div class="border-t border-blue-300/50 my-4"></div>
                                 <p class="text-gray-200 text-sm mb-4">Bridges people and technology by leading talent growth and contributing to innovative software solutions.</p>
                                 <div class="flex space-x-4">
-                                    <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300"><i class="fab fa-linkedin-in text-xl"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Arthali -->
-                    <div class="group relative rounded-lg shadow-lg overflow-hidden scroll-animate scroll-fade-up" style="transition-delay: 300ms;">
-                        <img src="https://placehold.co/400x400/EBF4FF/7F9CF5?text=A" alt="Arthali Mohad" class="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                        <div class="absolute inset-0 p-6 flex flex-col justify-end text-white">
-                            <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                    <div class="group relative rounded-lg shadow-lg overflow-hidden scroll-animate scroll-fade-up text-white" style="transition-delay: 300ms;">
+                        <img src="Arthali.jpeg" alt="Arthali Mohad" class="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105" width="600" height="800" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 to-transparent">
+                            <!-- Name and Title -->
+                            <div class="transform transition-transform duration-500 ease-in-out group-hover:-translate-y-24">
                                 <h4 class="font-bold text-2xl">Ms. Arthali Mohad</h4>
                                 <p class="text-blue-300 font-semibold">AI & Marketing Strategist</p>
                             </div>
-                            <div class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 mt-2">
+                            <!-- Details that fade in -->
+                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
+                                <div class="border-t border-blue-300/50 my-4"></div>
                                 <p class="text-gray-200 text-sm mb-4">Combines AI expertise with modern marketing, creating data-driven solutions that turn innovation into impact.</p>
                                 <div class="flex space-x-4">
-                                    <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300"><i class="fab fa-linkedin-in text-xl"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Government Recognition Subsection -->
+            <div class="mt-20 text-center scroll-animate scroll-fade-up">
+                <h3 class="text-2xl font-bold mb-8">Official Recognition</h3>
+                <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md flex flex-col sm:flex-row items-center gap-8">
+                    <img src="goverment_stanp.png" alt="MSME Logo - Government of India Recognition" class="h-24 w-24 object-contain" width="96" height="96" loading="lazy" decoding="async">
+                    <div class="text-left">
+                        <h4 class="font-bold text-xl">Registered with MSME, Govt. of India</h4>
+                        <p class="text-gray-600 mt-2">Skyvex IT Solutions is officially recognized by the Ministry of Micro, Small & Medium Enterprises, reflecting our commitment to contributing to the nation's economic growth and innovation landscape.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
+    <!-- =================================================================== -->
+    <!-- About Section End -->
+    <!-- =================================================================== -->
 
-    <!-- Services Section -->
+    <!-- =================================================================== -->
+    <!-- Services Section Start -->
+    <!-- =================================================================== -->
     <section id="services" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">Our Services</h2>
             <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto scroll-animate scroll-fade-up" style="transition-delay: 100ms;">Comprehensive technology solutions tailored to your business needs</p>
             
-            <div class="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto scroll-animate scroll-fade-up">
-                <!-- Left: Service Triggers -->
-                <div class="md:w-1/3 space-y-2">
-                    <button data-service="service-1" class="service-trigger-button w-full text-left flex items-center gap-4 p-4 rounded-lg bg-blue-600 text-white transition duration-300">
-                        <i class="fas fa-laptop-code text-xl w-6 text-center"></i>
-                        <span class="font-semibold">Custom Software Development</span>
-                    </button>
-                    <button data-service="service-2" class="service-trigger-button w-full text-left flex items-center gap-4 p-4 rounded-lg bg-white text-gray-700 hover:bg-gray-100 transition duration-300">
-                        <i class="fas fa-mobile-alt text-xl w-6 text-center"></i>
-                        <span class="font-semibold">Web & Mobile App Development</span>
-                    </button>
-                    <button data-service="service-3" class="service-trigger-button w-full text-left flex items-center gap-4 p-4 rounded-lg bg-white text-gray-700 hover:bg-gray-100 transition duration-300">
-                        <i class="fas fa-cloud text-xl w-6 text-center"></i>
-                        <span class="font-semibold">Cloud Architecture & DevOps</span>
-                    </button>
-                    <button data-service="service-4" class="service-trigger-button w-full text-left flex items-center gap-4 p-4 rounded-lg bg-white text-gray-700 hover:bg-gray-100 transition duration-300">
-                        <i class="fas fa-chart-line text-xl w-6 text-center"></i>
-                        <span class="font-semibold">Data Analytics & BI</span>
-                    </button>
-                    <button data-service="service-5" class="service-trigger-button w-full text-left flex items-center gap-4 p-4 rounded-lg bg-white text-gray-700 hover:bg-gray-100 transition duration-300">
-                        <i class="fas fa-robot text-xl w-6 text-center"></i>
-                        <span class="font-semibold">AI/ML-Based Solutions</span>
-                    </button>
-                    <button data-service="service-6" class="service-trigger-button w-full text-left flex items-center gap-4 p-4 rounded-lg bg-white text-gray-700 hover:bg-gray-100 transition duration-300">
-                        <i class="fas fa-users text-xl w-6 text-center"></i>
-                        <span class="font-semibold">Technical Consulting</span>
-                    </button>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col">
+                    <div class="text-blue-600 mb-6"><i class="fas fa-laptop-code text-4xl"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Custom Software Development</h3>
+                    <p class="text-gray-600 flex-grow">Tailor-made software solutions designed to solve your unique business challenges and streamline operations for maximum efficiency and growth.</p>
+                    <div class="mt-6">
+                        <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">Learn More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
+                    </div>
                 </div>
-
-                <!-- Right: Service Content -->
-                <div class="md:w-2/3">
-                    <div id="service-1" class="service-content-panel bg-white p-8 rounded-lg shadow-lg animate-fade-in">
-                        <img src="https://placehold.co/600x350/EBF4FF/7F9CF5?text=Software" alt="Custom Software Development" class="rounded-lg mb-6 w-full">
-                        <h3 class="text-2xl font-bold mb-3">Custom Software Development</h3>
-                        <p class="text-gray-600 mb-4">Tailor-made software solutions designed to solve your unique business challenges and streamline operations for maximum efficiency and growth.</p>
+                <!-- Service Card 2 -->
+                <div class="group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 100ms;">
+                    <div class="text-blue-600 mb-6"><i class="fas fa-mobile-alt text-4xl"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Web & Mobile App Development</h3>
+                    <p class="text-gray-600 flex-grow">Engaging, high-performance applications for all platforms that connect you with your customers and provide seamless user experiences.</p>
+                    <div class="mt-6">
+                        <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">Learn More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
                     </div>
-                    <div id="service-2" class="service-content-panel bg-white p-8 rounded-lg shadow-lg animate-fade-in hidden">
-                        <img src="https://placehold.co/600x350/EBF4FF/7F9CF5?text=Apps" alt="Web & Mobile App Development" class="rounded-lg mb-6 w-full">
-                        <h3 class="text-2xl font-bold mb-3">Web & Mobile App Development</h3>
-                        <p class="text-gray-600 mb-4">Engaging, high-performance applications for all platforms that connect you with your customers and provide seamless user experiences.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 200ms;">
+                    <div class="text-blue-600 mb-6"><i class="fas fa-cloud text-4xl"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Cloud Architecture & DevOps</h3>
+                    <p class="text-gray-600 flex-grow">Scalable cloud solutions and streamlined deployment pipelines for agile, resilient, and cost-effective infrastructure that grows with your business.</p>
+                    <div class="mt-6">
+                        <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">Learn More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
                     </div>
-                    <div id="service-3" class="service-content-panel bg-white p-8 rounded-lg shadow-lg animate-fade-in hidden">
-                        <img src="https://placehold.co/600x350/EBF4FF/7F9CF5?text=Cloud" alt="Cloud Architecture & DevOps" class="rounded-lg mb-6 w-full">
-                        <h3 class="text-2xl font-bold mb-3">Cloud Architecture & DevOps</h3>
-                        <p class="text-gray-600 mb-4">Scalable cloud solutions and streamlined deployment pipelines for agile, resilient, and cost-effective infrastructure that grows with your business.</p>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 300ms;">
+                    <div class="text-blue-600 mb-6"><i class="fas fa-chart-line text-4xl"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Data Analytics & BI</h3>
+                    <p class="text-gray-600 flex-grow">Transform your raw data into actionable insights. We provide powerful business intelligence and visualization tools to inform your strategic decisions.</p>
+                    <div class="mt-6">
+                        <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">Learn More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
                     </div>
-                    <div id="service-4" class="service-content-panel bg-white p-8 rounded-lg shadow-lg animate-fade-in hidden">
-                        <img src="https://placehold.co/600x350/EBF4FF/7F9CF5?text=Analytics" alt="Data Analytics & BI" class="rounded-lg mb-6 w-full">
-                        <h3 class="text-2xl font-bold mb-3">Data Analytics & BI</h3>
-                        <p class="text-gray-600 mb-4">Transform your raw data into actionable insights. We provide powerful business intelligence and visualization tools to inform your strategic decisions.</p>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 400ms;">
+                    <div class="text-blue-600 mb-6"><i class="fas fa-robot text-4xl"></i></div>
+                    <h3 class="text-xl font-bold mb-3">AI/ML-Based Solutions</h3>
+                    <p class="text-gray-600 flex-grow">Leverage artificial intelligence and machine learning to automate processes, predict trends, and gain a significant competitive advantage in your industry.</p>
+                    <div class="mt-6">
+                        <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">Learn More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
                     </div>
-                    <div id="service-5" class="service-content-panel bg-white p-8 rounded-lg shadow-lg animate-fade-in hidden">
-                        <img src="https://placehold.co/600x350/EBF4FF/7F9CF5?text=AI" alt="AI/ML-Based Solutions" class="rounded-lg mb-6 w-full">
-                        <h3 class="text-2xl font-bold mb-3">AI/ML-Based Solutions</h3>
-                        <p class="text-gray-600 mb-4">Leverage artificial intelligence and machine learning to automate processes, predict trends, and gain a significant competitive advantage in your industry.</p>
-                    </div>
-                    <div id="service-6" class="service-content-panel bg-white p-8 rounded-lg shadow-lg animate-fade-in hidden">
-                        <img src="https://placehold.co/600x350/EBF4FF/7F9CF5?text=Consulting" alt="Technical Consulting" class="rounded-lg mb-6 w-full">
-                        <h3 class="text-2xl font-bold mb-3">Technical Consulting</h3>
-                        <p class="text-gray-600 mb-4">Our experts provide strategic guidance to align your technology roadmap with your business objectives, ensuring maximum impact and return on investment.</p>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 500ms;">
+                    <div class="text-blue-600 mb-6"><i class="fas fa-users text-4xl"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Technical Consulting</h3>
+                    <p class="text-gray-600 flex-grow">Our experts provide strategic guidance to align your technology roadmap with your business objectives, ensuring maximum impact and return on investment.</p>
+                    <div class="mt-6">
+                        <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">Learn More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- =================================================================== -->
+    <!-- Services Section End -->
+    <!-- =================================================================== -->
 
-    <!-- Industries Section -->
-    <section id="industries" class="py-20 bg-white">
+    <!-- =================================================================== -->
+    <!-- Our Process Section Start -->
+    <!-- =================================================================== -->
+    <section id="process" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">Our Process</h2>
+            <p class="text-xl text-center text-gray-600 mb-20 max-w-3xl mx-auto scroll-animate scroll-fade-up" style="transition-delay: 100ms;">A streamlined journey from concept to launch, ensuring transparency and success.</p>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- Step 1: Discovery -->
+                <div class="flex scroll-animate scroll-fade-up" style="transition-delay: 150ms;">
+                    <div class="flex flex-col items-center mr-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow-md">
+                            <i class="fas fa-search text-2xl"></i>
+                        </div>
+                        <div class="w-px h-full bg-blue-200"></div>
+                    </div>
+                    <div class="pt-1 pb-16">
+                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP <span class="count-up-number" data-target="1">0</span></p>
+                        <h3 class="text-2xl font-bold mb-3">Discovery & Strategy</h3>
+                        <p class="text-gray-600">We begin with in-depth consultations to understand your vision, goals, and technical requirements, crafting a detailed project roadmap for success.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2: Design -->
+                <div class="flex scroll-animate scroll-fade-up" style="transition-delay: 300ms;">
+                    <div class="flex flex-col items-center mr-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow-md">
+                            <i class="fas fa-pencil-ruler text-2xl"></i>
+                        </div>
+                        <div class="w-px h-full bg-blue-200"></div>
+                    </div>
+                    <div class="pt-1 pb-16">
+                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP <span class="count-up-number" data-target="2">0</span></p>
+                        <h3 class="text-2xl font-bold mb-3">UI/UX Design</h3>
+                        <p class="text-gray-600">Our design team creates intuitive, user-centric wireframes and prototypes. We focus on delivering a seamless and engaging user experience that aligns with your brand.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3: Develop -->
+                <div class="flex scroll-animate scroll-fade-up" style="transition-delay: 450ms;">
+                    <div class="flex flex-col items-center mr-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow-md">
+                            <i class="fas fa-code text-2xl"></i>
+                        </div>
+                        <div class="w-px h-full bg-blue-200"></div>
+                    </div>
+                    <div class="pt-1 pb-16">
+                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP <span class="count-up-number" data-target="3">0</span></p>
+                        <h3 class="text-2xl font-bold mb-3">Development</h3>
+                        <p class="text-gray-600">Following agile methodologies, our expert developers write clean, efficient, and scalable code, bringing the approved designs to life and building a robust product.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4: Test -->
+                <div class="flex scroll-animate scroll-fade-up" style="transition-delay: 600ms;">
+                    <div class="flex flex-col items-center mr-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow-md">
+                            <i class="fas fa-vial text-2xl"></i>
+                        </div>
+                        <div class="w-px h-full bg-blue-200"></div>
+                    </div>
+                    <div class="pt-1 pb-16">
+                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP <span class="count-up-number" data-target="4">0</span></p>
+                        <h3 class="text-2xl font-bold mb-3">Quality Assurance</h3>
+                        <p class="text-gray-600">We conduct rigorous testing across all devices and scenarios to identify and fix bugs, ensuring the final product is stable, secure, and high-performing.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5: Deploy -->
+                <div class="flex scroll-animate scroll-fade-up" style="transition-delay: 750ms;">
+                    <div class="flex flex-col items-center mr-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow-md">
+                            <i class="fas fa-rocket text-2xl"></i>
+                        </div>
+                        <div class="w-px h-full bg-blue-200"></div>
+                    </div>
+                    <div class="pt-1 pb-16">
+                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP <span class="count-up-number" data-target="5">0</span></p>
+                        <h3 class="text-2xl font-bold mb-3">Deployment</h3>
+                        <p class="text-gray-600">We manage the entire deployment process, ensuring a smooth and seamless launch of your application to the live environment with minimal downtime.</p>
+                    </div>
+                </div>
+
+                <!-- Step 6: Support -->
+                <div class="flex scroll-animate scroll-fade-up" style="transition-delay: 900ms;">
+                    <div class="flex flex-col items-center mr-6">
+                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow-md">
+                            <i class="fas fa-headset text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="pt-1">
+                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP <span class="count-up-number" data-target="6">0</span></p>
+                        <h3 class="text-2xl font-bold mb-3">Maintenance & Support</h3>
+                        <p class="text-gray-600">Our partnership doesn't end at launch. We provide ongoing maintenance, updates, and support to ensure your solution remains effective and secure long-term.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- =================================================================== -->
+    <!-- Our Process Section End -->
+    <!-- =================================================================== -->
+
+    <!-- =================================================================== -->
+    <!-- Industries Section Start -->
+    <!-- =================================================================== -->
+    <section id="industries" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">Industries We Serve</h2>
             <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto scroll-animate scroll-fade-up" style="transition-delay: 100ms;">Domain expertise across multiple sectors to deliver targeted solutions</p>
             
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
                 <!-- Industry 1 -->
-                <div class="text-center p-4 scroll-animate scroll-fade-up">
-                    <div class="w-24 h-24 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 shadow-lg transition-transform duration-300 hover:scale-110 hover:shadow-xl">
+                <div class="group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-blue-600 transition-all duration-300 scroll-animate scroll-fade-up">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gray-100 group-hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-500 group-hover:text-white shadow-lg transition-all duration-300">
                         <i class="fas fa-heartbeat text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Healthcare</h3>
                     <p class="text-gray-600 text-sm">Improving patient care with innovative EHR and telemedicine solutions.</p>
                 </div>
                 <!-- Industry 2 -->
-                <div class="text-center p-4 scroll-animate scroll-fade-up" style="transition-delay: 100ms;">
-                    <div class="w-24 h-24 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 shadow-lg transition-transform duration-300 hover:scale-110 hover:shadow-xl">
+                <div class="group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-blue-600 transition-all duration-300 scroll-animate scroll-fade-up" style="transition-delay: 100ms;">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gray-100 group-hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-500 group-hover:text-white shadow-lg transition-all duration-300">
                         <i class="fas fa-shopping-cart text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">E-commerce</h3>
                     <p class="text-gray-600 text-sm">Enhancing online shopping experiences with scalable platforms.</p>
                 </div>
                 <!-- Industry 3 -->
-                <div class="text-center p-4 scroll-animate scroll-fade-up" style="transition-delay: 200ms;">
-                    <div class="w-24 h-24 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 shadow-lg transition-transform duration-300 hover:scale-110 hover:shadow-xl">
+                <div class="group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-blue-600 transition-all duration-300 scroll-animate scroll-fade-up" style="transition-delay: 200ms;">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gray-100 group-hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-500 group-hover:text-white shadow-lg transition-all duration-300">
                         <i class="fas fa-piggy-bank text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Fintech</h3>
                     <p class="text-gray-600 text-sm">Driving innovation in banking and payments with secure technology.</p>
                 </div>
                 <!-- Industry 4 -->
-                <div class="text-center p-4 scroll-animate scroll-fade-up" style="transition-delay: 300ms;">
-                    <div class="w-24 h-24 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 shadow-lg transition-transform duration-300 hover:scale-110 hover:shadow-xl">
+                <div class="group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-blue-600 transition-all duration-300 scroll-animate scroll-fade-up" style="transition-delay: 300ms;">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gray-100 group-hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-500 group-hover:text-white shadow-lg transition-all duration-300">
                         <i class="fas fa-home text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Real Estate</h3>
                     <p class="text-gray-600 text-sm">Digital transformation for property management and smart buildings.</p>
                 </div>
                 <!-- Industry 5 -->
-                <div class="text-center p-4 scroll-animate scroll-fade-up" style="transition-delay: 400ms;">
-                    <div class="w-24 h-24 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 shadow-lg transition-transform duration-300 hover:scale-110 hover:shadow-xl">
+                <div class="group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-blue-600 transition-all duration-300 scroll-animate scroll-fade-up" style="transition-delay: 400ms;">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gray-100 group-hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-500 group-hover:text-white shadow-lg transition-all duration-300">
                         <i class="fas fa-graduation-cap text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">EdTech</h3>
                     <p class="text-gray-600 text-sm">Engaging e-learning platforms that facilitate knowledge sharing.</p>
                 </div>
                 <!-- Industry 6 -->
-                <div class="text-center p-4 scroll-animate scroll-fade-up" style="transition-delay: 500ms;">
-                    <div class="w-24 h-24 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 shadow-lg transition-transform duration-300 hover:scale-110 hover:shadow-xl">
+                <div class="group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-blue-600 transition-all duration-300 scroll-animate scroll-fade-up" style="transition-delay: 500ms;">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gray-100 group-hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-500 group-hover:text-white shadow-lg transition-all duration-300">
                         <i class="fas fa-truck text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Logistics</h3>
@@ -367,42 +542,48 @@
             </div>
         </div>
     </section>
+    <!-- =================================================================== -->
+    <!-- Industries Section End -->
+    <!-- =================================================================== -->
 
-    <!-- Testimonials Section -->
+    <!-- =================================================================== -->
+    <!-- Testimonials Section Start -->
+    <!-- =================================================================== -->
     <section id="testimonials" class="py-20 bg-blue-600 text-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">What Our Clients Say</h2>
             <p class="text-xl text-center text-blue-100 mb-16 max-w-3xl mx-auto scroll-animate scroll-fade-up" style="transition-delay: 100ms;">Success stories from businesses we've helped transform</p>
             
             <div class="relative max-w-3xl mx-auto scroll-animate scroll-zoom-in">
-                <div class="overflow-hidden rounded-lg bg-blue-700 shadow-xl">
+                <!-- Slider Container -->
+                <div class="overflow-hidden rounded-lg bg-blue-700 shadow-xl"> 
                     <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
                         <!-- Slide 1 -->
                         <div class="testimonial-slide w-full flex-shrink-0 p-8 md:p-12 text-center">
-                            <img src="https://placehold.co/80x80" alt="Portrait of John Doe, CTO of HealthTech Innovations" class="rounded-full w-20 h-20 mx-auto mb-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=80&h=80&auto=format&fit=crop" alt="Client portrait" class="rounded-full w-20 h-20 mx-auto mb-4 object-cover" width="80" height="80" loading="lazy" decoding="async">
                             <p class="text-lg italic mb-4">"Skyvex transformed our digital presence and helped us streamline our operations. Their team is knowledgeable, responsive, and delivered beyond our expectations."</p>
-                            <h4 class="font-bold text-xl">John Doe</h4>
-                            <p class="text-blue-200">CTO, HealthTech Innovations</p>
+                            <h4 class="font-bold text-xl">Alex Johnson</h4>
+                            <p class="text-blue-200">CTO, Innovate Corp</p>
                             <div class="text-yellow-400 mt-4">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                         </div>
                         <!-- Slide 2 -->
                         <div class="testimonial-slide w-full flex-shrink-0 p-8 md:p-12 text-center">
-                            <img src="https://placehold.co/80x80" alt="Portrait of Jane Smith, Founder of E-commerce Solutions" class="rounded-full w-20 h-20 mx-auto mb-4">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=80&h=80&auto=format&fit=crop" alt="Client portrait" class="rounded-full w-20 h-20 mx-auto mb-4 object-cover" width="80" height="80" loading="lazy" decoding="async">
                             <p class="text-lg italic mb-4">"Working with Skyvex has been a game-changer for our startup. Their expertise in technology is unmatched and their agile approach helped us launch ahead of schedule."</p>
-                            <h4 class="font-bold text-xl">Jane Smith</h4>
-                            <p class="text-blue-200">Founder, E-commerce Solutions</p>
+                            <h4 class="font-bold text-xl">Samantha Lee</h4>
+                            <p class="text-blue-200">Founder, RetailNext</p>
                             <div class="text-yellow-400 mt-4">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                         </div>
                         <!-- Slide 3 -->
                         <div class="testimonial-slide w-full flex-shrink-0 p-8 md:p-12 text-center">
-                            <img src="https://placehold.co/80x80" alt="Portrait of Michael Chen, Director of Operations at FinTech Global" class="rounded-full w-20 h-20 mx-auto mb-4">
+                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=80&h=80&auto=format&fit=crop" alt="Client portrait" class="rounded-full w-20 h-20 mx-auto mb-4 object-cover" width="80" height="80" loading="lazy" decoding="async">
                             <p class="text-lg italic mb-4">"The AI solutions developed by Skyvex have automated 80% of our manual processes. Their deep understanding of financial regulations was particularly impressive."</p>
-                            <h4 class="font-bold text-xl">Michael Chen</h4>
-                            <p class="text-blue-200">Director, FinTech Global</p>
+                            <h4 class="font-bold text-xl">David Chen</h4>
+                            <p class="text-blue-200">Director, FinSecure</p>
                             <div class="text-yellow-400 mt-4">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                             </div>
@@ -411,10 +592,10 @@
                 </div>
 
                 <!-- Navigation Buttons -->
-                <button id="testimonial-prev" class="absolute top-1/2 -left-4 md:-left-6 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full w-10 h-10 flex items-center justify-center transition focus:outline-none">
+                <button id="testimonial-prev" class="absolute top-1/2 -left-4 md:-left-6 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full w-10 h-10 flex items-center justify-center transition focus:outline-none hover:scale-110">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <button id="testimonial-next" class="absolute top-1/2 -right-4 md:-right-6 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full w-10 h-10 flex items-center justify-center transition focus:outline-none">
+                <button id="testimonial-next" class="absolute top-1/2 -right-4 md:-right-6 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full w-10 h-10 flex items-center justify-center transition focus:outline-none hover:scale-110">
                     <i class="fas fa-chevron-right"></i>
                 </button>
 
@@ -425,8 +606,13 @@
             </div>
         </div>
     </section>
+    <!-- =================================================================== -->
+    <!-- Testimonials Section End -->
+    <!-- =================================================================== -->
 
-    <!-- Contact Section -->
+    <!-- =================================================================== -->
+    <!-- Contact Section Start -->
+    <!-- =================================================================== -->
     <section id="contact" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">Get In Touch</h2>
@@ -434,25 +620,25 @@
             
             <div class="flex flex-col lg:flex-row gap-12">
                 <!-- Contact Form -->
-                <div class="lg:w-1/2 scroll-animate scroll-fade-left">
-                    <form class="bg-white p-8 rounded-lg shadow-md">
+                <div class="lg:w-1/2 scroll-animate scroll-fade-left"><!-- TODO: Replace YOUR_FORM_ID with your actual Formspree endpoint -->
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white p-8 rounded-lg shadow-md">
                         <div class="mb-6">
                             <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
                         </div>
                         <div class="mb-6">
                             <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
                         </div>
                         <div class="mb-6">
                             <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
                         </div>
                         <div class="mb-6">
                             <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 hover:shadow-lg">
                             Send Message
                         </button>
                     </form>
@@ -498,16 +684,16 @@
                         <div class="mt-8">
                             <h4 class="font-bold mb-4">Follow Us</h4>
                             <div class="flex space-x-4">
-                                <a href="#" class="text-blue-600 hover:text-blue-800">
+                                <a href="https://www.linkedin.com/company/skyvex-it-solutions" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">
                                     <i class="fab fa-linkedin-in text-2xl"></i>
                                 </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800">
+                                <a href="https://twitter.com/skyvex" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">
                                     <i class="fab fa-twitter text-2xl"></i>
                                 </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800">
+                                <a href="https://www.facebook.com/skyvex" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">
                                     <i class="fab fa-facebook-f text-2xl"></i>
                                 </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800">
+                                <a href="https://www.instagram.com/skyvex" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">
                                     <i class="fab fa-instagram text-2xl"></i>
                                 </a>
                             </div>
@@ -517,19 +703,29 @@
             </div>
         </div>
     </section>
+    <!-- =================================================================== -->
+    <!-- Contact Section End -->
+    <!-- =================================================================== -->
 
-    <!-- Map Section -->
+    <!-- =================================================================== -->
+    <!-- Map Section Start -->
+    <!-- =================================================================== -->
     <div class="h-96 w-full">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.88654015206!2d77.49085271171281!3d12.953959987043192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf15e5ddf09ec6b27!2sBangalore%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
+    <!-- =================================================================== -->
+    <!-- Map Section End -->
+    <!-- =================================================================== -->
 
-    <!-- Footer -->
+    <!-- =================================================================== -->
+    <!-- Footer Start -->
+    <!-- =================================================================== -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <img src="https://placehold.co/180x50" alt="Skyvex IT Solutions Company Logo" class="h-10 mb-6">
+                <div class="mb-8 md:mb-0">
+                    <img src="SKYVEX.png" alt="Skyvex IT Solutions Company Logo" class="h-20 mb-16" width="250" height="80" loading="lazy" decoding="async">
                     <p class="text-gray-400">Empowering businesses through innovative technology solutions since 2015.</p>
                 </div>
                 
@@ -539,6 +735,7 @@
                         <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
                         <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
                         <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#process" class="text-gray-400 hover:text-white transition">Our Process</a></li>
                         <li><a href="#industries" class="text-gray-400 hover:text-white transition">Industries</a></li>
                         <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimonials</a></li>
                         <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
@@ -548,12 +745,12 @@
                 <div>
                     <h4 class="font-bold text-lg mb-6">Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Custom Software</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Web & Mobile Apps</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cloud Solutions</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Data Analytics</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">AI/ML Solutions</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">IT Consulting</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Custom Software</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Web & Mobile Apps</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Cloud Solutions</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Data Analytics</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">AI/ML Solutions</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">IT Consulting</a></li>
                     </ul>
                 </div>
                 
@@ -570,138 +767,35 @@
             <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Skyvex IT Solutions. All rights reserved.</p>
                 <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm">Sitemap</a>
+                    <a href="privacy-policy.html" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="sitemap.xml" class="text-gray-400 hover:text-white text-sm">Sitemap</a>
                 </div>
             </div>
         </div>
     </footer>
+    <!-- =================================================================== -->
+    <!-- Footer End -->
+    <!-- =================================================================== -->
 
-    <!-- JavaScript -->
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+    <!-- =================================================================== -->
+    <!-- Site-wide JavaScript -->
+    <!-- =================================================================== -->
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner">
+        <p class="text-sm">
+            We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies.
+        </p>
+        <button id="cookie-accept-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-md whitespace-nowrap">
+            Accept
+        </button>
+    </div>
+    <!-- WhatsApp Floating Action Button -->
+    <!-- TODO: Replace '1234567890' with your full WhatsApp number (e.g., 15551234567 for USA) -->
+    <a id="whatsapp-fab" href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="shadow-lg">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-        // Mobile menu toggle functionality
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = mobileMenuButton.querySelector('i');
-
-        mobileMenuButton.addEventListener('click', () => {
-            const isVisible = mobileMenu.classList.toggle('hidden');
-            // Toggle icon between bars and times (close)
-            menuIcon.classList.toggle('fa-bars', isVisible);
-            menuIcon.classList.toggle('fa-times', !isVisible);
-        });
-
-        // Close mobile menu when a link is clicked for better UX on single-page apps
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.add('fa-bars');
-                menuIcon.classList.remove('fa-times');
-            });
-        });
-
-        // Services Section Interactivity
-        const serviceTriggers = document.querySelectorAll('.service-trigger-button');
-        const serviceContents = document.querySelectorAll('.service-content-panel');
-        const activeServiceClasses = ['bg-blue-600', 'text-white'];
-        const inactiveServiceClasses = ['bg-white', 'text-gray-700', 'hover:bg-gray-100'];
-
-        serviceTriggers.forEach(trigger => {
-            trigger.addEventListener('click', () => {
-                const targetId = trigger.dataset.service;
-
-                // Update button styles
-                serviceTriggers.forEach(btn => {
-                    btn.classList.remove(...activeServiceClasses);
-                    btn.classList.add(...inactiveServiceClasses);
-                });
-                trigger.classList.add(...activeServiceClasses);
-                trigger.classList.remove(...inactiveServiceClasses);
-
-                // Show/hide content panels
-                serviceContents.forEach(panel => {
-                    panel.style.display = panel.id === targetId ? 'block' : 'none';
-                });
-            });
-        });
-
-        // Testimonial Slider
-        const sliderContainer = document.querySelector('#testimonials');
-        if (sliderContainer) {
-            const slider = sliderContainer.querySelector('#testimonial-slider');
-            const slides = sliderContainer.querySelectorAll('.testimonial-slide');
-            const prevButton = sliderContainer.querySelector('#testimonial-prev');
-            const nextButton = sliderContainer.querySelector('#testimonial-next');
-            const dotsContainer = sliderContainer.querySelector('#testimonial-dots');
-            let currentIndex = 0;
-            let slideInterval;
-
-            if (slides.length > 0) {
-                // Create dots
-                slides.forEach((_, i) => {
-                    const dot = document.createElement('button');
-                    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-                    dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-white/40', 'hover:bg-white/60', 'transition');
-                    dot.addEventListener('click', () => {
-                        showSlide(i);
-                        resetInterval();
-                    });
-                    dotsContainer.appendChild(dot);
-                });
-
-                const dots = dotsContainer.querySelectorAll('button');
-
-                const showSlide = (index) => {
-                    currentIndex = (index + slides.length) % slides.length;
-                    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-                    dots.forEach(dot => dot.classList.remove('bg-white'));
-                    dots[currentIndex].classList.add('bg-white');
-                };
-
-                const nextSlide = () => showSlide(currentIndex + 1);
-                const prevSlide = () => showSlide(currentIndex - 1);
-
-                const startInterval = () => {
-                    slideInterval = setInterval(nextSlide, 5000); // Auto-play every 5 seconds
-                };
-
-                const resetInterval = () => {
-                    clearInterval(slideInterval);
-                    startInterval();
-                };
-
-                nextButton.addEventListener('click', () => { nextSlide(); resetInterval(); });
-                prevButton.addEventListener('click', () => { prevSlide(); resetInterval(); });
-
-                showSlide(currentIndex);
-                startInterval();
-            }
-        }
-
-        // Animation on scroll
-        const animatedElements = document.querySelectorAll('.scroll-animate');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                } else {
-                    entry.target.classList.remove('is-visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        animatedElements.forEach(el => observer.observe(el));
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
