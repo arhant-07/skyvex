@@ -276,6 +276,10 @@
             margin-left: -2px;
             z-index: 0;
         }
+        #timeline-progress-bar {
+            left: 50%;
+            margin-left: -2px;
+        }
         .timeline-item {
             padding: 10px 40px;
             position: relative;
@@ -316,6 +320,7 @@
             border: medium solid var(--bg-white);
             border-width: 10px 0 10px 10px;
             border-color: transparent transparent transparent var(--bg-white);
+            transition: border-color 0.3s ease;
         }
         .timeline-item.right::before {
             content: " ";
@@ -328,6 +333,7 @@
             border: medium solid var(--bg-white);
             border-width: 10px 10px 10px 0;
             border-color: transparent var(--bg-white) transparent transparent;
+            transition: border-color 0.3s ease;
         }
         .timeline-item.right .timeline-icon { left: -25px; }
         .timeline-content {
@@ -336,29 +342,47 @@
             position: relative;
             border-radius: 8px;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
         .timeline-item:hover .timeline-content {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            box-shadow: 0 10px 20px rgba(var(--color-primary-rgb), 0.15);
+            border-color: var(--color-primary-light);
+        }
+        .timeline-item.left:hover::before {
+            border-left-color: var(--color-primary-light);
+        }
+        .timeline-item.right:hover::before {
+            border-right-color: var(--color-primary-light);
         }
         .timeline-item:hover .timeline-icon {
             transform: scale(1.1);
             background-color: var(--color-primary);
             color: white;
+            box-shadow: 0 0 15px rgba(var(--color-primary-rgb), 0.5);
         }
         @media screen and (max-width: 768px) {
             .timeline-container::after { left: 31px; }
+            #timeline-progress-bar {
+                left: 31px;
+                margin-left: 0;
+            }
             .timeline-item {
                 width: 100%;
                 padding-left: 70px;
                 padding-right: 25px;
             }
-            .timeline-item::before {
+            .timeline-item.left::before, .timeline-item.right::before {
                 left: 60px;
                 border: medium solid var(--bg-white);
                 border-width: 10px 10px 10px 0;
                 border-color: transparent var(--bg-white) transparent transparent;
+                right: auto;
+            }
+            .timeline-item.left:hover::before {
+                border-left-color: transparent; /* Reset desktop hover */
+                border-right-color: var(--color-primary-light); /* Apply correct mobile hover */
             }
             .timeline-item.left .timeline-icon, .timeline-item.right .timeline-icon {
                 left: 15px;
@@ -765,7 +789,7 @@
             transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out, margin-top 0.7s ease-in-out;
         }
         .leadership-collapsible.is-open {
-            max-height: 1500px; /* A large enough value to accommodate content */
+            max-height: 3000px; /* A large enough value to accommodate content */
             opacity: 1;
             margin-top: 5rem; /* Corresponds to mt-20 */
         }
@@ -1366,7 +1390,7 @@
             <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto scroll-animate scroll-fade-up" style="transition-delay: 100ms;">A streamlined journey from concept to launch, ensuring transparency and success.</p>
             
             <div class="timeline-container">
-                <div id="timeline-progress-bar" class="absolute top-0 w-1 bg-blue-600" style="left: 50%; margin-left: -2px; z-index: 1; height: 0px; transition: height 0.1s linear;"></div>
+                <div id="timeline-progress-bar" class="absolute top-0 w-1 bg-blue-600" style="z-index: 1; height: 0px; transition: height 0.1s linear;"></div>
                 <!-- Step 1 -->
                 <div class="timeline-item left scroll-animate scroll-fade-right">
                     <div class="timeline-icon">
@@ -1790,13 +1814,13 @@
     </button>
     <!-- Project Idea Modal -->
     <div id="project-modal" class="modal-container fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" aria-labelledby="project-idea-modal-title" role="dialog" aria-modal="true">
-        <div id="project-modal-box" class="modal-box relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl grid grid-cols-1 lg:grid-cols-2 overflow-hidden transform -translate-y-10 transition-all duration-300">
+        <div id="project-modal-box" class="modal-box relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl grid grid-cols-1 lg:grid-cols-2 transform -translate-y-10 transition-all duration-300 max-h-[90vh] overflow-y-auto">
             <!-- Close Button -->
             <button id="project-modal-close-btn" class="absolute top-4 right-6 text-slate-400 hover:text-slate-800 z-20 transition-colors" aria-label="Close modal">
                 <i class="fa-solid fa-xmark text-2xl"></i>
             </button>
             <!-- Left Column: Info -->
-            <div class="bg-slate-800 p-8 md:p-12 text-white flex-col justify-center hidden lg:flex">
+            <div class="bg-slate-800 p-8 md:p-12 text-white flex flex-col justify-center">
                 <div class="mb-6">
                     <i class="fa-solid fa-rocket text-3xl text-blue-400"></i>
                 </div>
@@ -1807,8 +1831,7 @@
                 </div>
             </div>
             <!-- Right Column: Form -->
-            <div class="p-8 md:p-12 max-h-[90vh] lg:max-h-none overflow-y-auto">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6 lg:hidden">Let's Build Something Great.</h2>
+            <div class="p-8 md:p-12">
                 <form id="project-idea-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                     <!-- Contact Information -->
                     <fieldset class="mb-8"><legend class="text-xl font-semibold text-gray-800 pb-2 mb-6">Your Contact Information</legend><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label for="name" class="block text-sm font-medium text-gray-600 mb-1">Full Name</label><input type="text" id="name" name="name" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></div><div><label for="email" class="block text-sm font-medium text-gray-600 mb-1">Email Address</label><input type="email" id="email" name="email" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></div></div></fieldset>
