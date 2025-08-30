@@ -7,23 +7,24 @@
     <title>Skyvex IT Solutions - Empowering Global Innovation</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Skyvex IT Solutions, headquartered in Bangalore, delivers cutting-edge technology solutions including custom software, web/mobile apps, cloud architecture, and AI/ML for businesses worldwide.">
-    <meta name="keywords" content="IT solutions, software development, mobile apps, cloud computing, data analytics, AI, machine learning, Bangalore, USA">
+    <meta name="description" content="Skyvex IT Solutions, a leading IT company in Bangalore, empowers businesses in the USA and worldwide with custom software development, web & mobile apps, cloud & DevOps, AI/ML, and cybersecurity solutions.">
+    <meta name="keywords" content="custom software development, web application development, mobile app development, cloud architecture, DevOps services, data analytics, business intelligence, AI solutions, machine learning company, IT consulting Bangalore, cybersecurity services, fintech solutions, healthcare IT, e-commerce development, tech company India, IT services USA">
     <meta name="author" content="Skyvex IT Solutions">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.skyvexit.com/">
     <meta property="og:title" content="Skyvex IT Solutions - Empowering Global Innovation">
+    <meta property="og:site_name" content="Skyvex IT Solutions">
     <meta property="og:description" content="Delivering cutting-edge technology solutions for your business growth, from Bangalore to the USA.">
-    <meta property="og:image" content="assets/og-image.jpg"> <!-- Ensure you have an 'og-image.jpg' in an 'assets' folder -->
+    <meta property="og:image" content="https://www.skyvexit.com/assets/og-image.jpg"> <!-- Use absolute URL -->
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.skyvexit.com/">
     <meta property="twitter:title" content="Skyvex IT Solutions - Empowering Global Innovation">
     <meta property="twitter:description" content="Delivering cutting-edge technology solutions for your business growth, from Bangalore to the USA.">
-    <meta property="twitter:image" content="assets/twitter-image.jpg"> <!-- Ensure you have a 'twitter-image.jpg' in an 'assets' folder -->
+    <meta property="twitter:image" content="https://www.skyvexit.com/assets/og-image.jpg"> <!-- Use absolute URL, can be same as OG image -->
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -44,8 +45,797 @@
     <!-- Stylesheets and Scripts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Color Palette using CSS Custom Properties --- */
+        :root {
+            --color-primary: #2563EB; /* blue-600 */
+            --color-primary-rgb: 37, 99, 235;
+            --color-primary-dark: #1d4ed8; /* blue-700 */
+            --color-primary-light: #3b82f6; /* blue-500 */
+            --color-primary-faint: #eff6ff; /* blue-50 */
+            --color-secondary: #4f46e5; /* indigo-600 */
+            --color-accent-gold: #facc15;
+            --color-accent-pink: #ec4899;
+            --text-dark: #1f2937; /* gray-800 */
+            --text-light: #6b7280; /* gray-500 */
+            --bg-light: #f1f1f1;
+            --bg-white: #ffffff;
+            --border-light: #e5e7eb; /* gray-200 */
+        }
 
+        /* --- Preloader Styles --- */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-white);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease-out;
+        }
+        #preloader.preloader-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #e2e8f0;
+            border-top: 5px solid var(--color-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Custom styles */
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-light);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888; /* Keeping this neutral */
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* --- Subtle Body Background --- */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-white);
+        }
+
+        /* --- Hero Section Text Shadow --- */
+        .hero h1 {
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+        .hero p {
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Gradient Section Headers --- */
+        .section-heading-gradient {
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+            animation-delay: var(--delay);
+            opacity: 0;
+        }
+
+        /* --- Scroll Animation Styles --- */
+        .scroll-animate {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+        .scroll-fade-up {
+            transform: translateY(40px);
+        }
+        .scroll-fade-left {
+            transform: translateX(-40px);
+        }
+        .scroll-fade-right {
+            transform: translateX(40px);
+        }
+        .scroll-zoom-in {
+            transform: scale(0.9);
+        }
+
+        /* --- Professional Team Card --- */
+        .team-card-pro {
+            border: 2px solid transparent; /* Add transparent border for smooth transition */
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out;
+        }
+        .team-card-pro:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); /* shadow-xl */
+        }
+        /* Color-specific border on hover */
+        .team-card-pro.team-card-blue:hover { border-color: #2563EB; }
+        .team-card-pro.team-card-purple:hover { border-color: #9333ea; }
+        .team-card-pro.team-card-green:hover { border-color: #16a34a; }
+        .team-card-pro.team-card-pink:hover { border-color: #db2777; }
+
+        .team-card-pro .img-wrapper {
+            transition: box-shadow 0.4s ease-out;
+        }
+        .team-card-pro .img-wrapper img {
+            transition: transform 0.4s ease-out;
+        }
+        .team-card-pro:hover .img-wrapper img {
+            transform: scale(1.1);
+        }
+        /* Color-specific glow on hover */
+        .team-card-pro.team-card-blue:hover .img-wrapper { box-shadow: 0 0 25px rgba(37, 99, 235, 0.6); }
+        .team-card-pro.team-card-purple:hover .img-wrapper { box-shadow: 0 0 25px rgba(147, 51, 234, 0.6); }
+        .team-card-pro.team-card-green:hover .img-wrapper { box-shadow: 0 0 25px rgba(22, 163, 74, 0.6); }
+        .team-card-pro.team-card-pink:hover .img-wrapper { box-shadow: 0 0 25px rgba(219, 39, 119, 0.6); }
+
+        .team-card-pro .social-icons {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            transition-delay: 0.1s;
+        }
+        .team-card-pro:hover .social-icons {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Animated Recognition Card Border --- */
+        .recognition-card-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .recognition-card-wrapper::before {
+            content: '';
+            position: absolute;
+            z-index: -1; /* Behind the card content */
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(120deg, var(--color-primary-light), var(--color-accent-gold), var(--color-accent-pink), var(--color-primary-light));
+            background-size: 300% 300%;
+            border-radius: 14px; /* Match the card's rounded-xl + border width */
+            animation: gradient-flow 8s ease infinite;
+        }
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- Full Page Hero Section --- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.85), rgba(var(--color-primary-rgb), 0.7));
+        }
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('image.webp');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            z-index: -1;
+            will-change: transform; /* Performance hint for the browser */
+        }
+
+        /* --- New Process Section Style (Zig-Zag Timeline) --- */
+        .timeline-container {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--border-light);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            z-index: 0;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-item .timeline-icon {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            right: -25px;
+            background-color: var(--bg-white);
+            border: 4px solid var(--color-primary);
+            top: 32px;
+            border-radius: 50%;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: scale(0);
+        }
+        .timeline-item.is-visible .timeline-icon {
+            transform: scale(1);
+            transition-delay: 0.2s;
+        }
+        .timeline-item.left { left: 0; }
+        .timeline-item.right { left: 50%; }
+        .timeline-item.left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 42px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--bg-white);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--bg-white);
+        }
+        .timeline-item.right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 42px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--bg-white);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--bg-white) transparent transparent;
+        }
+        .timeline-item.right .timeline-icon { left: -25px; }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--bg-white);
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .timeline-item:hover .timeline-icon {
+            transform: scale(1.1);
+            background-color: var(--color-primary);
+            color: white;
+        }
+        @media screen and (max-width: 768px) {
+            .timeline-container::after { left: 31px; }
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid var(--bg-white);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--bg-white) transparent transparent;
+            }
+            .timeline-item.left .timeline-icon, .timeline-item.right .timeline-icon {
+                left: 15px;
+            }
+            .timeline-item.right { left: 0%; }
+        }
+
+        /* --- Interactive Industry Card --- */
+        .industry-card .industry-card-icon {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .industry-card:hover .industry-card-icon {
+            transform: scale(1.15) rotate(-8deg);
+        }
+
+        /* --- Enhanced Stat Card --- */
+        .stat-card {
+            background: linear-gradient(145deg, #ffffff, #f9fafb); /* white to gray-50 */
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease-in-out;
+        }
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: var(--color-primary-light);
+        }
+        .stat-card .stat-icon {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            transition: transform 0.3s ease;
+        }
+        .stat-card:hover .stat-icon {
+            transform: scale(1.1);
+        }
+
+        /* --- Enhanced Stat Card --- */
+        .stat-card {
+            background: linear-gradient(145deg, #ffffff, #f9fafb); /* white to gray-50 */
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease-in-out;
+        }
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: var(--color-primary-light);
+        }
+        .stat-card .stat-icon {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            transition: transform 0.3s ease;
+        }
+        .stat-card:hover .stat-icon {
+            transform: scale(1.1);
+        }
+
+        /* CSS for the filtering animation */
+        /* --- Lazy Loading Image Effect --- */
+        .lazy-blur {
+            filter: blur(10px);
+            transition: filter 0.7s ease-in-out;
+        }
+        .lazy-blur.loaded {
+            filter: blur(0);
+        }
+
+        /* --- About Us Image Hover & Parallax Effect --- */
+        .about-image-container {
+            overflow: hidden;
+        }
+        #about-image-parallax {
+            transition: transform 0.5s ease-in-out;
+            transform: scale(1.15) translateY(var(--parallax-y, 0px));
+            will-change: transform;
+        }
+        .about-image-container:hover #about-image-parallax {
+            transform: scale(1.2) translateY(var(--parallax-y, 0px));
+        }
+
+        /* --- Service Card Icon Animation --- */
+        .group.bg-white .text-blue-600 i {
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+        .group.bg-white:hover .text-blue-600 i {
+            transform: scale(1.1) rotate(5deg);
+            color: var(--color-primary-dark);
+        }
+
+        /* --- Service Card Shine Effect --- */
+        .group.bg-white { /* Targeting the service, leadership, and industry cards */
+            position: relative;
+            overflow: hidden;
+        }
+        .group.bg-white::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.8) 45%, rgba(255, 255, 255, 0.8) 55%, transparent 80%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease-in-out;
+            pointer-events: none;
+        }
+        .group.bg-white:hover::before {
+            transform: translateX(100%);
+        }
+
+        /* --- Service Card Mobile Scroll Animation --- */
+        @media (max-width: 767px) {
+            /* On mobile, we want the "hover" state to be the default state once the card scrolls into view.
+               We hook into the .is-visible class that's already added by the scroll animation script.
+               This overrides the default transform of the scroll animation and applies the hover effects. */
+            #services .group.bg-white.is-visible {
+                transform: translateY(-8px); /* Corresponds to -translate-y-2 */
+                box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); /* Corresponds to shadow-2xl */
+            }
+
+            /* Apply the icon animation */
+            #services .group.bg-white.is-visible .text-blue-600 i {
+                transform: scale(1.1) rotate(5deg);
+                color: var(--color-primary-dark);
+            }
+
+            /* Apply the shine effect */
+            #services .group.bg-white.is-visible::before {
+                transform: translateX(100%);
+            }
+        }
+
+        .team-social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #f3f4f6; /* gray-100 */
+            color: #6b7280; /* gray-500 */
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .team-social-icon:hover {
+            background-color: var(--color-primary);
+            color: white;
+            transform: scale(1.1) translateY(-2px); /* Added translateY for a subtle lift */
+        }
+
+        /* --- Social Icon Animation --- */
+        .social-icon:hover {
+            transform: translateY(-4px);
+        }
+
+        /* --- Animated Form Button --- */
+        .form-submit-btn {
+            background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary), var(--color-primary-light), var(--color-primary-dark));
+            background-size: 200% auto;
+            color: white;
+            transition: background-position 0.5s ease-out, transform 0.2s ease-out, box-shadow 0.3s ease-out;
+        }
+        .form-submit-btn:hover {
+            background-position: right center;
+        }
+
+        /* --- Active Nav Link Styles --- */
+        #desktop-menu a.nav-active {
+            color: var(--color-primary);
+        }
+        #mobile-menu a.nav-active {
+            color: var(--color-primary);
+            background-color: var(--color-primary-faint);
+        }
+
+        /* --- WhatsApp Floating Action Button --- */
+        #whatsapp-fab {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+
+            background-color: var(--bg-white); /* Start with white background */
+            width: 60px;
+            height: 60px;
+            border-radius: 12px; /* Rounded Rectangle */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            transform: scale(0); /* Start hidden */
+            opacity: 0;
+            overflow: hidden;
+            text-decoration: none; /* Ensure no underline */
+            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+        }
+        #whatsapp-fab:hover {
+            width: 220px; /* Expand width on hover */
+            transform: translateY(-5px); /* Lift on hover */
+            box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+            background: linear-gradient(45deg, #25D366, #1DA851); /* Switch to WhatsApp green */
+        }
+        #whatsapp-fab.visible {
+            transform: scale(1); /* Show when visible */
+            opacity: 1;
+        }
+        /* The company logo, visible by default */
+        #whatsapp-fab .whatsapp-fab-logo {
+            font-size: 32px; /* Use font-size for icon */
+            color: #25D366; /* WhatsApp Green */
+            transition: opacity 0.2s ease-out;
+        }
+        #whatsapp-fab:hover .whatsapp-fab-logo {
+            opacity: 0; /* Hide the logo on hover */
+        }
+        /* The content that appears on hover, hidden by default */
+        #whatsapp-fab .whatsapp-fab-hover-content {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.2s ease-out 0.1s;
+        }
+        #whatsapp-fab:hover .whatsapp-fab-hover-content {
+            opacity: 1; /* Show the hover content */
+        }
+        #whatsapp-fab .whatsapp-fab-hover-content i {
+            font-size: 2.25rem;
+            color: white;
+        }
+        #whatsapp-fab .whatsapp-fab-hover-content span {
+            font-size: 1rem;
+            font-weight: 600;
+            white-space: nowrap;
+            color: white;
+            margin-left: 12px;
+        }
+
+        /* --- Cookie Consent Banner --- */
+        #cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #111827;
+            color: #f9fafb;
+            padding: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            z-index: 1050;
+            transform: translateY(100%);
+            transition: transform 0.5s ease-in-out;
+        }
+        #cookie-consent-banner.visible {
+            transform: translateY(0);
+        }
+        @media (max-width: 640px) {
+            #cookie-consent-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* --- Dynamic Navbar Styles --- */
+        #main-nav {
+            background-color: transparent;
+            border-bottom: 1px solid transparent;
+            transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        #main-nav.nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.75); /* Light semi-transparent "glass" background */
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
+            backdrop-filter: blur(10px);
+            border-bottom-color: rgba(0, 0, 0, 0.05); /* Subtle separator */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        #main-nav #nav-logo {
+            transition: height 0.3s ease-in-out;
+        }
+        #main-nav #desktop-menu a.nav-link {
+            transition: color 0.3s ease-in-out;
+        }
+        #main-nav #mobile-menu-button {
+            transition: color 0.3s ease-in-out;
+        }
+
+        /* --- Hero Button Hover Effect --- */
+        .hero-btn {
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .hero-btn:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+            transform: translateY(-3px) scale(1.05); /* Combine scale and slight lift */
+        }
+        .hero-btn.outline:hover { /* For the transparent button */
+            box-shadow: 0 10px 20px rgba(255,255,255,0.25); /* White shadow for outline button */
+        }
+        
+        /* --- Nav Link Underline Effect --- */
+        #main-nav #desktop-menu a.nav-link {
+            position: relative; /* Needed for ::after positioning */
+            transition: color 0.3s ease-in-out;
+        }
+
+        /* --- Footer Link Underline Effect --- */
+        .footer-link {
+            position: relative;
+            display: inline-block; /* Ensure underline applies only to text width */
+            transition: color 0.3s ease-in-out;
+        }
+        .footer-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; /* Position below text */
+            left: 0;
+            width: 0%; /* Start with no width */
+            height: 1px; /* Underline thickness */
+            background-color: white; /* White underline */
+            transition: width 0.3s ease-out; /* Animate width */
+        }
+        .footer-link:hover::after {
+            width: 100%; /* Expand to full width on hover */
+        }
+
+        #main-nav #desktop-menu a.nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px; /* Adjust position below text */
+            left: 0;
+            width: 0%; /* Start with no width */
+            height: 2px; /* Underline thickness */
+            background-color: var(--color-primary);
+            transition: width 0.3s ease-out; /* Animate width */
+        }
+        #main-nav #desktop-menu a.nav-link:hover::after,
+        #main-nav #desktop-menu a.nav-link.nav-active::after { /* Also apply to active link */
+            width: 100%; /* Expand to full width on hover/active */
+        }
+        #main-nav #desktop-menu a.nav-link:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* --- Back to Top Button --- */
+        #back-to-top {
+            position: fixed;
+            bottom: 6rem; /* Position above WhatsApp FAB */
+            right: 2rem;
+            background-color: #1f2937; /* Tailwind gray-800 */
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            z-index: 1000;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            transform: translateY(100px);
+            opacity: 0;
+            cursor: pointer;
+        }
+        #back-to-top.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        #back-to-top:hover {
+            background-color: var(--color-primary);
+        }
+
+        /* --- Testimonial Star Animation --- */
+        #testimonials .fa-star, #testimonials .fa-star-half-alt {
+            transition: transform 0.2s ease-out, text-shadow 0.2s ease-out;
+        }
+        #testimonials .testimonial-slide:hover .fa-star, #testimonials .testimonial-slide:hover .fa-star-half-alt {
+            transform: scale(1.1);
+            text-shadow: 0 0 8px rgba(255, 255, 0, 0.6); /* Keeping this neutral yellow */
+        }
+
+        /* --- Horizontal Process Scroller on Mobile --- */
+        .horizontal-scroll-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            overflow: -moz-scrollbars-none;
+        }
+        .horizontal-scroll-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, and Opera */
+        }
+
+        /* --- Leadership Team Collapsible Section --- */
+        .leadership-collapsible {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out, margin-top 0.7s ease-in-out;
+        }
+        .leadership-collapsible.is-open {
+            max-height: 1500px; /* A large enough value to accommodate content */
+            opacity: 1;
+            margin-top: 5rem; /* Corresponds to mt-20 */
+        }
+        #toggle-leadership-icon.is-open {
+            transform: rotate(180deg);
+        }
+
+        /* --- Generic Modal Styles --- */
+        .modal-container.is-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-container.is-visible .modal-box {
+            transform: translateY(0);
+        }
+        body.modal-open {
+            overflow: hidden;
+        }
+        /* Custom scrollbar for modal content */
+        #modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        #modal-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        #modal-content::-webkit-scrollbar-thumb {
+            background: #d1d5db; /* gray-300 */
+            border-radius: 4px;
+        }
+        /* --- Form Styles for Modal --- */
+        .form-submit-btn {
+            background: linear-gradient(to right, #2563eb, #3b82f6);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .form-submit-btn:hover {
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+        /* Custom Radio Button */
+        .custom-radio input {
+            display: none;
+        }
+        .custom-radio .radio-dot {
+            height: 1.25rem;
+            width: 1.25rem;
+            border-radius: 50%;
+            border: 2px solid #cbd5e1; /* slate-300 */
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .custom-radio .radio-dot::after {
+            content: '';
+            height: 0.625rem;
+            width: 0.625rem;
+            border-radius: 50%;
+            background-color: white;
+            transform: scale(0);
+            transition: transform 0.2s ease;
+        }
+        .custom-radio input:checked + .radio-dot {
+            background-color: #2563eb; /* blue-600 */
+            border-color: #2563eb;
+        }
+        .custom-radio input:checked + .radio-dot::after {
+            transform: scale(1);
+        }
+    </style>
+    <div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
     <!-- Schema.org Structured Data for SEO -->
     <script type="application/ld+json">
     {
@@ -63,7 +853,7 @@
       },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "123 Tech Park",
+        "streetAddress": "Your Street Address",
         "addressLocality": "Bangalore",
         "addressRegion": "Karnataka",
         "postalCode": "560001",
@@ -71,11 +861,22 @@
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+91-12345-67890",
+        "telephone": "+91-77097-41447",
         "contactType": "customer service",
         "email": "info@skyvexit.com",
         "areaServed": ["IN", "US"],
         "availableLanguage": ["en-US", "en-IN"]
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
       },
       "sameAs": [
         "https://www.linkedin.com/company/skyvex-it-solutions",
@@ -98,7 +899,7 @@
     }
     </script>
 </head>
-<body class="bg-gray-50">
+<body class="bg-white">
     <!-- =================================================================== -->
     <!-- Preloader Start -->
     <!-- =================================================================== -->
@@ -106,39 +907,41 @@
         <div class="spinner"></div>
     </div>
 
+    <header>
     <!-- =================================================================== -->
     <!-- Navigation Start -->
     <!-- =================================================================== -->
     <nav id="main-nav" class="sticky top-0 z-30 transition-all duration-300">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center transition-all duration-300">
+        <div class="container mx-auto px-4 flex justify-between items-center py-4 transition-all duration-300">
             <div class="flex items-center">
-                <img id="nav-logo" src="SKYVEX.png" alt="Skyvex IT Solutions Company Logo" class="h-16 w-auto transition-all duration-300" width="200" height="64" loading="eager">
+                <img id="nav-logo" src="SKYVEX.png" alt="Skyvex IT Solutions Company Logo" class="h-20 w-auto" width="250" height="80" loading="eager">
             </div>
             <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8" id="desktop-menu">
-                <a href="#home" class="nav-link text-lg text-white font-bold transition-colors duration-300">Home</a>
-                <a href="#about" class="nav-link text-lg text-white hover:text-blue-300 font-bold transition-colors duration-300">About Us</a>
-                <a href="#services" class="nav-link text-lg text-white hover:text-blue-300 font-bold transition-colors duration-300">Services</a>
-                <a href="#process" class="nav-link text-lg text-white hover:text-blue-300 font-bold transition-colors duration-300">Our Process</a>
-                <a href="#industries" class="nav-link text-lg text-white hover:text-blue-300 font-bold transition-colors duration-300">Industries</a>
-                <a href="#testimonials" class="nav-link text-lg text-white hover:text-blue-300 font-bold transition-colors duration-300">Testimonials</a>
-                <a href="#contact" class="nav-link text-lg text-white hover:text-blue-300 font-bold transition-colors duration-300">Contact</a>
-            </div>
+            <ul class="hidden md:flex space-x-8" id="desktop-menu">
+                <li><a href="#home" class="nav-link text-xl font-bold transition-colors duration-300 nav-active" aria-current="page">Home</a></li>
+                <li><a href="#about" class="nav-link text-xl text-gray-800 hover:text-blue-600 font-bold transition-colors duration-300">About</a></li>
+                <li><a href="#services" class="nav-link text-xl text-gray-800 hover:text-blue-600 font-bold transition-colors duration-300">Services</a></li>
+                <li><a href="#process" class="nav-link text-xl text-gray-800 hover:text-blue-600 font-bold transition-colors duration-300">Our Process</a></li>
+                <li><a href="#industries" class="nav-link text-xl text-gray-800 hover:text-blue-600 font-bold transition-colors duration-300">Industries</a></li>
+                <li><a href="#case-studies" class="nav-link text-xl text-gray-800 hover:text-blue-600 font-bold transition-colors duration-300">Case Studies</a></li>
+                <li><a href="#contact" class="nav-link text-xl text-gray-800 hover:text-blue-600 font-bold transition-colors duration-300">Contact</a></li>
+            </ul>
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none transition-colors duration-300">
-                <i class="fas fa-bars text-2xl"></i>
+            <button id="mobile-menu-button" class="md:hidden text-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors duration-300" aria-label="Open main menu" aria-expanded="false" aria-controls="mobile-menu">
+                <i class="fa-solid fa-bars text-2xl" aria-hidden="true"></i>
             </button>
+            
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <a href="#home" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-bold">Home</a>
-            <a href="#about" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-bold">About Us</a>
-            <a href="#services" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-bold">Services</a>
-            <a href="#process" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-bold">Our Process</a>
-            <a href="#industries" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-bold">Industries</a>
-            <a href="#testimonials" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-bold">Testimonials</a>
-            <a href="#contact" class="block px-4 py-3 text-lg text-gray-800 hover:text-blue-800 hover:bg-gray-50 font-bold">Contact</a>
-        </div>
+        <ul id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <li><a href="#home" class="block px-4 py-3 text-xl text-gray-800 hover:text-blue-800 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none font-bold">Home</a></li>
+            <li><a href="#about" class="block px-4 py-3 text-xl text-gray-800 hover:text-blue-800 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none font-bold">About</a></li>
+            <li><a href="#services" class="block px-4 py-3 text-xl text-gray-800 hover:text-blue-800 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none font-bold">Services</a></li>
+            <li><a href="#process" class="block px-4 py-3 text-xl text-gray-800 hover:text-blue-800 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none font-bold">Our Process</a></li>
+            <li><a href="#industries" class="block px-4 py-3 text-xl text-gray-800 hover:text-blue-800 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none font-bold">Industries</a></li>
+            <li><a href="#case-studies" class="block px-4 py-3 text-xl text-gray-800 hover:text-blue-800 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none font-bold">Case Studies</a></li>
+            <li><a href="#contact" class="block px-4 py-3 text-xl text-gray-800 hover:text-blue-800 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none font-bold">Contact</a></li>
+        </ul>
     </nav>
     <!-- =================================================================== -->
     <!-- Navigation End -->
@@ -149,33 +952,39 @@
     <!-- =================================================================== -->
     <!-- The hero section now uses a CSS background image with a parallax effect -->
     <section id="home" class="hero text-white">
+        <div id="hero-background" class="hero-background"></div>
         <div class="container mx-auto px-4 text-center relative z-10">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-slide-up" style="--delay: 0.1s;">Empowering Global Innovation</h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-slide-up" style="--delay: 0.3s;">From Bangalore to the USA - Delivering cutting-edge technology solutions for your business growth</p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 animate-slide-up" style="--delay: 0.5s;">
-                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 hover:shadow-lg w-full sm:w-auto">
+                <button class="js-project-modal-trigger hero-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg w-full sm:w-auto">
                     Schedule a Consultation
-                </a>
-                <a href="#services" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 w-full sm:w-auto">
+                </button>
+                <a href="#services" class="hero-btn outline bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-8 rounded-lg w-full sm:w-auto">
                     Explore Our Services
                 </a>
             </div>
         </div>
     </section>
+    </header>
     <!-- =================================================================== -->
     <!-- Hero Section End -->
     <!-- =================================================================== -->
 
+    <main>
+
     <!-- =================================================================== -->
     <!-- About Section Start -->
     <!-- =================================================================== -->
-    <section id="about" class="py-20 bg-white">
+    <section id="about" class="py-20 bg-white scroll-mt-28">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 scroll-animate scroll-fade-up">About Skyvex IT Solutions</h2>
+            <h2 class="section-heading-gradient text-3xl md:text-4xl font-bold text-center mb-16 scroll-animate scroll-fade-up">About Skyvex IT Solutions</h2>
             
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/2 scroll-animate scroll-fade-left">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" alt="A diverse team collaborating in a modern office" class="rounded-lg shadow-xl" width="1200" height="800" loading="lazy" decoding="async">
+                    <div class="about-image-container rounded-lg shadow-xl">
+                        <img id="about-image-parallax" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" alt="A diverse team collaborating in a modern office" class="w-full h-full object-cover" width="1200" height="800" loading="lazy" decoding="async">
+                    </div>
                 </div>
                 <div class="lg:w-1/2 scroll-animate scroll-fade-right">
                     <h3 class="text-2xl font-bold mb-6 ">Our Story</h3>
@@ -191,101 +1000,108 @@
                             <h5 class="font-semibold">Innovation</h5>
                             <p class="text-sm text-gray-500">Pushing boundaries with new technologies</p>
                         </div>
-                        <div class="border-l-4 border-blue-600 pl-4">
+                        <div class="border-l-4 border-purple-600 pl-4">
                             <h5 class="font-semibold">Integrity</h5>
                             <p class="text-sm text-gray-500">Transparent and honest in all dealings</p>
                         </div>
-                        <div class="border-l-4 border-blue-600 pl-4">
+                        <div class="border-l-4 border-pink-600 pl-4">
                             <h5 class="font-semibold">Collaboration</h5>
                             <p class="text-sm text-gray-500">Teamwork makes the dream work</p>
                         </div>
-                        <div class="border-l-4 border-blue-600 pl-4">
+                        <div class="border-l-4 border-amber-500 pl-4">
                             <h5 class="font-semibold">Empowerment</h5>
                             <p class="text-sm text-gray-500">Growing people and businesses</p>
                         </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button id="toggle-leadership-btn" aria-controls="leadership-team" aria-expanded="false" class="inline-flex items-center bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                            <span id="toggle-leadership-text">Meet the Team</span>
+                            <i id="toggle-leadership-icon" class="fa-solid fa-chevron-down ml-2 transition-transform duration-300" aria-hidden="true"></i>
+                        </button>
                     </div>
                 </div>
             </div>
 
             <!-- Leadership Team Subsection -->
-            <div class="mt-20">
-                <h3 class="text-2xl font-bold text-center mb-8 scroll-animate scroll-fade-up">Leadership Team</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 justify-center gap-8">
+            <div id="leadership-team" class="leadership-collapsible scroll-mt-28">
+                <h3 class="text-3xl font-bold text-center mb-16 scroll-animate scroll-fade-up">Meet Our Leadership</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Richhi -->
-                    <div class="group relative rounded-lg shadow-lg overflow-hidden scroll-animate scroll-fade-up text-white">
-                        <img src="Richhi.jpg" alt="Ms. Richhi Pradeep Bajpai" class="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105" width="600" height="800" loading="lazy" decoding="async">
-                        <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 to-transparent">
-                            <!-- Name and Title -->
-                            <div class="transform transition-transform duration-500 ease-in-out group-hover:-translate-y-24">
-                                <h4 class="font-bold text-2xl">Ms. Richhi Pradeep Bajpai</h4>
-                                <p class="text-blue-300 font-semibold">CEO & Founder</p>
-                            </div>
-                            <!-- Details that fade in -->
-                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
-                                <div class="border-t border-blue-300/50 my-4"></div>
-                                <p class="text-gray-200 text-sm mb-4">Renowned for her visionary leadership and commitment to empowering young professionals.</p>
-                                <div class="flex space-x-4">
-                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300"><i class="fab fa-linkedin-in text-xl"></i></a>
-                                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300"><i class="fab fa-twitter text-xl"></i></a>
+                    <div class="group bg-white p-6 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col text-center h-full scroll-animate scroll-fade-up">
+                        <div class="relative mx-auto mb-4">
+                            <img src="Richhi.jpg" alt="Ms. Richhi Pradeep Bajpai" class="w-56 h-64 rounded-lg object-cover object-top shadow-md">
+                            <div class="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 rounded-lg flex items-center justify-center">
+                                <div class="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="team-social-icon bg-white/20 text-white hover:bg-white hover:text-blue-600" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="team-social-icon bg-white/20 text-white hover:bg-white hover:text-blue-600" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
                                 </div>
                             </div>
                         </div>
+                        <div class="flex-grow">
+                            <h4 class="font-bold text-xl text-gray-800">Ms. Richhi Pradeep Bajpai</h4>
+                            <p class="text-blue-600 font-semibold mb-3">CEO & Founder</p>
+                            <p class="text-gray-600 text-sm">Visionary leader committed to empowering young professionals and driving innovation.</p>
+                        </div>
+                        <div class="border-t border-gray-200 pt-3 mt-4">
+                            <p class="italic text-gray-500 text-sm">"We build partnerships that foster growth."</p>
+                        </div>
                     </div>
-                    <!-- Sushmita -->
-                    <div class="group relative rounded-lg shadow-lg overflow-hidden scroll-animate scroll-fade-up text-white" style="transition-delay: 100ms;">
-                        <img src="Sushmita Singh.jpg" alt="Sushmita Singh" class="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105" width="600" height="800" loading="lazy" decoding="async">
-                        <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 to-transparent">
-                            <!-- Name and Title -->
-                            <div class="transform transition-transform duration-500 ease-in-out group-hover:-translate-y-24">
-                                <h4 class="font-bold text-2xl">Ms. Sushmita Singh</h4>
-                                <p class="text-blue-300 font-semibold">Co-founder & COO</p>
-                            </div>
-                            <!-- Details that fade in -->
-                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
-                                <div class="border-t border-blue-300/50 my-4"></div>
-                                <p class="text-gray-200 text-sm mb-4">Combines strategic vision with operational excellence, driving innovation and ensuring smooth project execution.</p>
-                                <div class="flex space-x-4">
-                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+                    <!--Sushmita Singh-->
+                    <div class="group bg-white p-6 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col text-center h-full scroll-animate scroll-fade-up" style="transition-delay: 150ms;">
+                        <div class="relative mx-auto mb-4">
+                            <img src="Sushmita Singh.jpg" alt="Sushmita Singh" class="w-56 h-64 rounded-lg object-cover object-top shadow-md">
+                            <div class="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 rounded-lg flex items-center justify-center">
+                                <div class="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="team-social-icon bg-white/20 text-white hover:bg-white hover:text-blue-600" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Arhant -->
-                    <div class="group relative rounded-lg shadow-lg overflow-hidden scroll-animate scroll-fade-up text-white" style="transition-delay: 200ms;">
-                        <img src="arhant.jpg" alt="Arhant Dhanvijay" class="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105" width="600" height="800" loading="lazy" decoding="async">
-                        <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 to-transparent">
-                            <!-- Name and Title -->
-                            <div class="transform transition-transform duration-500 ease-in-out group-hover:-translate-y-24">
-                                <h4 class="font-bold text-2xl">Mr. Arhant Dhanvijay</h4>
-                                <p class="text-blue-300 font-semibold">HR Manager & Developer</p>
-                            </div>
-                            <!-- Details that fade in -->
-                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
-                                <div class="border-t border-blue-300/50 my-4"></div>
-                                <p class="text-gray-200 text-sm mb-4">Bridges people and technology by leading talent growth and contributing to innovative software solutions.</p>
-                                <div class="flex space-x-4">
-                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300"><i class="fab fa-linkedin-in text-xl"></i></a>
-                                </div>
-                            </div>
+                        <div class="flex-grow">
+                            <h4 class="font-bold text-xl text-gray-800">Ms. Sushmita Singh</h4>
+                            <p class="text-blue-600 font-semibold mb-3">Co-founder & COO</p>
+                            <p class="text-gray-600 text-sm">Combines strategic vision with operational excellence for flawless execution.</p>
+                        </div>
+                        <div class="border-t border-gray-200 pt-3 mt-4">
+                            <p class="italic text-gray-500 text-sm">"Driving operational excellence is the key to sustainable growth."</p>
                         </div>
                     </div>
                     <!-- Arthali -->
-                    <div class="group relative rounded-lg shadow-lg overflow-hidden scroll-animate scroll-fade-up text-white" style="transition-delay: 300ms;">
-                        <img src="Arthali.jpeg" alt="Arthali Mohad" class="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105" width="600" height="800" loading="lazy" decoding="async">
-                        <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 to-transparent">
-                            <!-- Name and Title -->
-                            <div class="transform transition-transform duration-500 ease-in-out group-hover:-translate-y-24">
-                                <h4 class="font-bold text-2xl">Ms. Arthali Mohad</h4>
-                                <p class="text-blue-300 font-semibold">AI & Marketing Strategist</p>
-                            </div>
-                            <!-- Details that fade in -->
-                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
-                                <div class="border-t border-blue-300/50 my-4"></div>
-                                <p class="text-gray-200 text-sm mb-4">Combines AI expertise with modern marketing, creating data-driven solutions that turn innovation into impact.</p>
-                                <div class="flex space-x-4">
-                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+                    <div class="group bg-white p-6 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col text-center h-full scroll-animate scroll-fade-up" style="transition-delay: 300ms;">
+                        <div class="relative mx-auto mb-4">
+                            <img src="Arthali.jpeg" alt="Arthali Mohad" class="w-56 h-64 rounded-lg object-cover object-top shadow-md">
+                            <div class="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 rounded-lg flex items-center justify-center">
+                                <div class="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="team-social-icon bg-white/20 text-white hover:bg-white hover:text-blue-600" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                                 </div>
                             </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-bold text-xl text-gray-800">Ms. Arthali Mohad</h4>
+                            <p class="text-blue-600 font-semibold mb-3">AI & Marketing Strategist</p>
+                            <p class="text-gray-600 text-sm">Combines AI expertise with modern marketing to turn innovation into impact.</p>
+                        </div>
+                        <div class="border-t border-gray-200 pt-3 mt-4">
+                            <p class="italic text-gray-500 text-sm">"Data tells a story; we use AI to read it."</p>
+                        </div>
+                    </div>
+                    <!-- Arhant -->
+                    <div class="group bg-white p-6 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col text-center h-full scroll-animate scroll-fade-up" style="transition-delay: 450ms;">
+                        <div class="relative mx-auto mb-4">
+                            <img src="arhant.jpg" alt="Mr. Arhant Dhanvijay" class="w-56 h-64 rounded-lg object-cover object-top shadow-md">
+                            <div class="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 rounded-lg flex items-center justify-center">
+                                <div class="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="team-social-icon bg-white/20 text-white hover:bg-white hover:text-blue-600" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-bold text-xl text-gray-800">Mr. Arhant Dhanvijay</h4>
+                            <p class="text-blue-600 font-semibold mb-3">HR Manager & Developer</p>
+                            <p class="text-gray-600 text-sm">Bridges people and technology, leading talent growth and software solutions.</p>
+                        </div>
+                        <div class="border-t border-gray-200 pt-3 mt-4">
+                            <p class="italic text-gray-500 text-sm">"The best tech is built by empowered people."</p>
                         </div>
                     </div>
                 </div>
@@ -293,12 +1109,23 @@
 
             <!-- Government Recognition Subsection -->
             <div class="mt-20 text-center scroll-animate scroll-fade-up">
-                <h3 class="text-2xl font-bold mb-8">Official Recognition</h3>
-                <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md flex flex-col sm:flex-row items-center gap-8">
-                    <img src="goverment_stanp.png" alt="MSME Logo - Government of India Recognition" class="h-24 w-24 object-contain" width="96" height="96" loading="lazy" decoding="async">
-                    <div class="text-left">
-                        <h4 class="font-bold text-xl">Registered with MSME, Govt. of India</h4>
-                        <p class="text-gray-600 mt-2">Skyvex IT Solutions is officially recognized by the Ministry of Micro, Small & Medium Enterprises, reflecting our commitment to contributing to the nation's economic growth and innovation landscape.</p>
+                <h3 class="text-2xl font-bold mb-12">Official Recognition</h3>
+                <div class="recognition-card-wrapper max-w-4xl mx-auto relative overflow-hidden rounded-xl shadow-2xl">
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-8 sm:p-10">
+                    <div class="absolute -top-5 -left-5 w-20 h-20 bg-blue-600 rounded-full opacity-10 pointer-events-none"></div>
+                    <div class="absolute -bottom-5 -right-5 w-20 h-20 bg-yellow-400 rounded-full opacity-10 pointer-events-none"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                        <div class="flex-shrink-0">
+                            <div class="p-4 bg-white rounded-full shadow-lg">
+                                <img src="goverment_stanp.png" alt="MSME Logo - Government of India Recognition" class="h-32 w-32 object-contain transition-transform duration-300 hover:scale-110" width="128" height="128" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <p class="text-base font-semibold text-blue-700 uppercase tracking-wider">Government of India Recognition</p>
+                            <h4 class="font-bold text-3xl lg:text-4xl text-gray-800 mt-1">MSME Registered Enterprise</h4>
+                            <p class="text-gray-600 mt-3 max-w-xl mx-auto md:mx-0">Skyvex IT Solutions is proudly recognized by the Ministry of Micro, Small & Medium Enterprises, reflecting our commitment to contributing to the nation's economic growth and innovation landscape.</p>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -312,67 +1139,177 @@
     <!-- =================================================================== -->
     <!-- Services Section Start -->
     <!-- =================================================================== -->
-    <section id="services" class="py-20 bg-gray-50">
+    <section id="services" class="py-20 bg-white scroll-mt-28">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">Our Services</h2>
+            <h2 class="section-heading-gradient text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">Our Services</h2>
             <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto scroll-animate scroll-fade-up" style="transition-delay: 100ms;">Comprehensive technology solutions tailored to your business needs</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service Card 1 -->
-                <div class="group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col">
-                    <div class="text-blue-600 mb-6"><i class="fas fa-laptop-code text-4xl"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Custom Software Development</h3>
-                    <p class="text-gray-600 flex-grow">Tailor-made software solutions designed to solve your unique business challenges and streamline operations for maximum efficiency and growth.</p>
-                    <div class="mt-6">
-                        <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">Learn More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
+                <div class="service-card group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col">
+                    <div class="flex-grow">
+                        <div class="text-blue-600 mb-6"><i class="fa-solid fa-laptop-code text-4xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Custom Software Development</h3>
+                        <p class="text-gray-600">Tailor-made software solutions designed to solve your unique business challenges and streamline operations for maximum efficiency and growth.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Enterprise Applications</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> SaaS Product Development</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> API & System Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4">
+                        <button class="service-modal-trigger inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105"
+                            data-title="Custom Software Development"
+                            data-content="<p class='mb-4'>We specialize in creating bespoke software solutions that are meticulously crafted to meet the unique demands of your business. Our process involves a deep dive into your operations to build a product that not only solves current challenges but also scales for future growth.</p>
+                            <h4 class='font-semibold text-lg mb-2'>Key Deliverables:</h4>
+                            <ul class='list-disc list-inside space-y-2 text-gray-600'>
+                                <li><strong>Full-Cycle Development:</strong> From ideation and design to deployment and maintenance, we handle every stage of the software lifecycle.</li>
+                                <li><strong>Scalable Architecture:</strong> We build on modern, robust architectures that ensure your software can handle growth in users and data.</li>
+                                <li><strong>Legacy System Modernization:</strong> We can help you upgrade outdated systems to improve performance, security, and maintainability.</li>
+                                <li><strong>Seamless Integration:</strong> Our solutions are designed to integrate smoothly with your existing tools and third-party services, creating a unified digital ecosystem.</li>
+                            </ul>">Learn More <i class="fa-solid fa-arrow-right ml-1 text-sm"></i></button>
                     </div>
                 </div>
                 <!-- Service Card 2 -->
-                <div class="group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 100ms;">
-                    <div class="text-blue-600 mb-6"><i class="fas fa-mobile-alt text-4xl"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Web & Mobile App Development</h3>
-                    <p class="text-gray-600 flex-grow">Engaging, high-performance applications for all platforms that connect you with your customers and provide seamless user experiences.</p>
-                    <div class="mt-6">
-                        <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">Learn More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
+                <div class="service-card group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 100ms;">
+                    <div class="flex-grow">
+                        <div class="text-blue-600 mb-6"><i class="fa-solid fa-mobile-screen-button text-4xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Web & Mobile App Development</h3>
+                        <p class="text-gray-600">Engaging, high-performance applications for all platforms that connect you with your customers and provide seamless user experiences.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> iOS & Android Native Apps</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Progressive Web Apps (PWAs)</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Responsive Web Design</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4">
+                        <button class="service-modal-trigger inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105"
+                            data-title="Web & Mobile App Development"
+                            data-content="<p class='mb-4'>We build beautiful, high-performance web and mobile applications that provide a seamless user experience across all devices. Our focus is on creating engaging platforms that connect you with your audience and drive business goals.</p>
+                            <h4 class='font-semibold text-lg mb-2'>Our Expertise Includes:</h4>
+                            <ul class='list-disc list-inside space-y-2 text-gray-600'>
+                                <li><strong>Native iOS & Android Apps:</strong> High-performance, platform-specific applications that leverage the full power of mobile devices.</li>
+                                <li><strong>Cross-Platform Development:</strong> Cost-effective solutions using frameworks like React Native to reach a wider audience with a single codebase.</li>
+                                <li><strong>Progressive Web Apps (PWAs):</strong> App-like experiences on the web that are fast, reliable, and installable.</li>
+                                <li><strong>Responsive Web Design:</strong> Visually stunning websites that work flawlessly on desktops, tablets, and smartphones.</li>
+                            </ul>">Learn More <i class="fa-solid fa-arrow-right ml-1 text-sm"></i></button>
                     </div>
                 </div>
                 <!-- Service Card 3 -->
-                <div class="group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 200ms;">
-                    <div class="text-blue-600 mb-6"><i class="fas fa-cloud text-4xl"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Cloud Architecture & DevOps</h3>
-                    <p class="text-gray-600 flex-grow">Scalable cloud solutions and streamlined deployment pipelines for agile, resilient, and cost-effective infrastructure that grows with your business.</p>
-                    <div class="mt-6">
-                        <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">Learn More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
+                <div class="service-card group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 200ms;">
+                    <div class="flex-grow">
+                        <div class="text-blue-600 mb-6"><i class="fa-solid fa-cloud text-4xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Cloud Architecture & DevOps</h3>
+                        <p class="text-gray-600">Scalable cloud solutions and streamlined deployment pipelines for agile, resilient, and cost-effective infrastructure that grows with your business.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Cloud Migration & Strategy</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> CI/CD Pipeline Automation</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Infrastructure as Code (IaC)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4">
+                        <button class="service-modal-trigger inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105"
+                            data-title="Cloud Architecture & DevOps"
+                            data-content="<p class='mb-4'>We help you leverage the power of the cloud to build scalable, resilient, and cost-effective infrastructure. Our DevOps practices streamline your development and deployment pipelines, enabling faster and more reliable software delivery.</p>
+                            <h4 class='font-semibold text-lg mb-2'>Core Offerings:</h4>
+                            <ul class='list-disc list-inside space-y-2 text-gray-600'>
+                                <li><strong>Cloud Migration & Strategy:</strong> We assess your needs and create a seamless migration plan to AWS, Azure, or Google Cloud.</li>
+                                <li><strong>Infrastructure as Code (IaC):</strong> Using tools like Terraform, we automate your infrastructure setup for consistency and speed.</li>
+                                <li><strong>CI/CD Pipeline Automation:</strong> We build automated pipelines for continuous integration and delivery, reducing manual errors and accelerating release cycles.</li>
+                                <li><strong>Containerization & Orchestration:</strong> Expertise in Docker and Kubernetes to build and manage microservices-based applications efficiently.</li>
+                            </ul>">Learn More <i class="fa-solid fa-arrow-right ml-1 text-sm"></i></button>
                     </div>
                 </div>
                 <!-- Service Card 4 -->
-                <div class="group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 300ms;">
-                    <div class="text-blue-600 mb-6"><i class="fas fa-chart-line text-4xl"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Data Analytics & BI</h3>
-                    <p class="text-gray-600 flex-grow">Transform your raw data into actionable insights. We provide powerful business intelligence and visualization tools to inform your strategic decisions.</p>
-                    <div class="mt-6">
-                        <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">Learn More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
+                <div class="service-card group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 300ms;">
+                    <div class="flex-grow">
+                        <div class="text-blue-600 mb-6"><i class="fa-solid fa-chart-line text-4xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Data Analytics & BI</h3>
+                        <p class="text-gray-600">Transform your raw data into actionable insights. We provide powerful business intelligence and visualization tools to inform your strategic decisions.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Interactive Dashboards</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Predictive Modeling</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Data Warehousing & ETL</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4">
+                        <button class="service-modal-trigger inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105"
+                            data-title="Data Analytics & BI"
+                            data-content="<p class='mb-4'>Unlock the potential of your data. We transform raw information into actionable insights through powerful business intelligence (BI) tools, custom dashboards, and advanced analytics, empowering you to make smarter, data-driven decisions.</p>
+                            <h4 class='font-semibold text-lg mb-2'>What We Provide:</h4>
+                            <ul class='list-disc list-inside space-y-2 text-gray-600'>
+                                <li><strong>Interactive Dashboards:</strong> We create custom, real-time dashboards using tools like Tableau and Power BI for at-a-glance insights.</li>
+                                <li><strong>Data Warehousing & ETL:</strong> We design and build robust data warehouses and ETL (Extract, Transform, Load) pipelines to centralize your data.</li>
+                                <li><strong>Predictive Modeling:</strong> Using statistical models and machine learning, we help you forecast trends and predict future outcomes.</li>
+                                <li><strong>Business Process Optimization:</strong> We analyze your data to identify inefficiencies and opportunities for improvement in your operations.</li>
+                            </ul>">Learn More <i class="fa-solid fa-arrow-right ml-1 text-sm"></i></button>
                     </div>
                 </div>
                 <!-- Service Card 5 -->
-                <div class="group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 400ms;">
-                    <div class="text-blue-600 mb-6"><i class="fas fa-robot text-4xl"></i></div>
-                    <h3 class="text-xl font-bold mb-3">AI/ML-Based Solutions</h3>
-                    <p class="text-gray-600 flex-grow">Leverage artificial intelligence and machine learning to automate processes, predict trends, and gain a significant competitive advantage in your industry.</p>
-                    <div class="mt-6">
-                        <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">Learn More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
+                <div class="service-card group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 400ms;">
+                    <div class="flex-grow">
+                        <div class="text-blue-600 mb-6"><i class="fa-solid fa-robot text-4xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3">AI/ML-Based Solutions</h3>
+                        <p class="text-gray-600">Leverage artificial intelligence and machine learning to automate processes, predict trends, and gain a significant competitive advantage in your industry.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Natural Language Processing</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Computer Vision Models</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Custom AI Algorithms</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4">
+                        <button class="service-modal-trigger inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105"
+                            data-title="AI/ML-Based Solutions"
+                            data-content="<p class='mb-4'>Gain a competitive edge by integrating artificial intelligence and machine learning into your business processes. We develop custom AI/ML models to automate tasks, personalize user experiences, and uncover hidden patterns in your data.</p>
+                            <h4 class='font-semibold text-lg mb-2'>Our Capabilities:</h4>
+                            <ul class='list-disc list-inside space-y-2 text-gray-600'>
+                                <li><strong>Natural Language Processing (NLP):</strong> Solutions for sentiment analysis, chatbots, and text classification to understand and interact with your customers.</li>
+                                <li><strong>Computer Vision:</strong> We build models for image recognition, object detection, and video analysis to automate visual tasks.</li>
+                                <li><strong>Recommendation Engines:</strong> Personalized product or content recommendations to increase user engagement and sales.</li>
+                                <li><strong>Custom AI Algorithms:</strong> Development of unique algorithms tailored to solve your specific business challenges.</li>
+                            </ul>">Learn More <i class="fa-solid fa-arrow-right ml-1 text-sm"></i></button>
                     </div>
                 </div>
                 <!-- Service Card 6 -->
-                <div class="group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 500ms;">
-                    <div class="text-blue-600 mb-6"><i class="fas fa-users text-4xl"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Technical Consulting</h3>
-                    <p class="text-gray-600 flex-grow">Our experts provide strategic guidance to align your technology roadmap with your business objectives, ensuring maximum impact and return on investment.</p>
-                    <div class="mt-6">
-                        <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105">Learn More <i class="fas fa-arrow-right ml-1 text-sm"></i></a>
+                <div class="service-card group bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out scroll-animate scroll-fade-up flex flex-col" style="transition-delay: 500ms;">
+                    <div class="flex-grow">
+                        <div class="text-blue-600 mb-6"><i class="fa-solid fa-users text-4xl"></i></div>
+                        <h3 class="text-xl font-bold mb-3">Technical Consulting</h3>
+                        <p class="text-gray-600">Our experts provide strategic guidance to align your technology roadmap with your business objectives, ensuring maximum impact and return on investment.</p>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Technology Roadmapping</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Architecture Review</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Digital Transformation Strategy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4">
+                        <button class="service-modal-trigger inline-block bg-blue-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105"
+                            data-title="Technical Consulting"
+                            data-content="<p class='mb-4'>Our expert consultants provide strategic guidance to help you navigate the complex technology landscape. We work with you to align your technology roadmap with your long-term business objectives, ensuring your IT investments deliver maximum value and ROI.</p>
+                            <h4 class='font-semibold text-lg mb-2'>How We Help:</h4>
+                            <ul class='list-disc list-inside space-y-2 text-gray-600'>
+                                <li><strong>Technology Roadmapping:</strong> We help you plan your technology adoption and evolution over time to stay ahead of the curve.</li>
+                                <li><strong>Architecture Review & Design:</strong> Our experts assess your current system architecture and recommend improvements for scalability, security, and performance.</li>
+                                <li><strong>Digital Transformation Strategy:</strong> We guide you through the process of adopting digital technologies to fundamentally change how you operate and deliver value.</li>
+                                <li><strong>Vendor and Technology Selection:</strong> We provide unbiased advice to help you choose the right tools and partners for your projects.</li>
+                            </ul>">Learn More <i class="fa-solid fa-arrow-right ml-1 text-sm"></i></button>
                     </div>
                 </div>
+
             </div>
+
         </div>
     </section>
     <!-- =================================================================== -->
@@ -380,103 +1317,130 @@
     <!-- =================================================================== -->
 
     <!-- =================================================================== -->
+    <!-- Project Stats Section Start -->
+    <!-- =================================================================== -->
+    <section id="project-stats" class="py-20 bg-white scroll-mt-28">
+        <div class="container mx-auto px-4">
+            <h2 class="section-heading-gradient text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">Our Work in Numbers</h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto scroll-animate scroll-fade-up" style="transition-delay: 100ms;">A glimpse into our diverse project portfolio</p>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+                <!-- Stat 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md scroll-animate scroll-fade-up" style="transition-delay: 0ms;">
+                    <p class="text-4xl md:text-5xl font-bold text-blue-600 count-up-number" data-target="115">0</p>
+                    <p class="mt-2 text-gray-600 font-semibold">Total Projects</p>
+                </div>
+                <!-- Stat 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md scroll-animate scroll-fade-up" style="transition-delay: 100ms;">
+                    <p class="text-4xl md:text-5xl font-bold text-blue-600 count-up-number" data-target="20">0</p>
+                    <p class="mt-2 text-gray-600 font-semibold">Capstone Projects</p>
+                </div>
+                <!-- Stat 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md scroll-animate scroll-fade-up" style="transition-delay: 200ms;">
+                    <p class="text-4xl md:text-5xl font-bold text-blue-600 count-up-number" data-target="15">0</p>
+                    <p class="mt-2 text-gray-600 font-semibold">AI Projects</p>
+                </div>
+                <!-- Stat 4 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md scroll-animate scroll-fade-up" style="transition-delay: 300ms;">
+                    <p class="text-4xl md:text-5xl font-bold text-blue-600 count-up-number" data-target="15">0</p>
+                    <p class="mt-2 text-gray-600 font-semibold">Web Development</p>
+                </div>
+                <!-- Stat 5 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md scroll-animate scroll-fade-up" style="transition-delay: 400ms;">
+                    <p class="text-4xl md:text-5xl font-bold text-blue-600 count-up-number" data-target="215">0</p>
+                    <p class="mt-2 text-gray-600 font-semibold">Software Development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =================================================================== -->
+    <!-- Project Stats Section End -->
+    <!-- =================================================================== -->
+
+    <!-- =================================================================== -->
     <!-- Our Process Section Start -->
     <!-- =================================================================== -->
-    <section id="process" class="py-20 bg-white">
+    <section id="process" class="py-20 bg-gray-50 scroll-mt-28">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">Our Process</h2>
-            <p class="text-xl text-center text-gray-600 mb-20 max-w-3xl mx-auto scroll-animate scroll-fade-up" style="transition-delay: 100ms;">A streamlined journey from concept to launch, ensuring transparency and success.</p>
+            <h2 class="section-heading-gradient text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">Our Process</h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto scroll-animate scroll-fade-up" style="transition-delay: 100ms;">A streamlined journey from concept to launch, ensuring transparency and success.</p>
             
-            <div class="max-w-3xl mx-auto">
-                <!-- Step 1: Discovery -->
-                <div class="flex scroll-animate scroll-fade-up" style="transition-delay: 150ms;">
-                    <div class="flex flex-col items-center mr-6">
-                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow-md">
-                            <i class="fas fa-search text-2xl"></i>
-                        </div>
-                        <div class="w-px h-full bg-blue-200"></div>
+            <div class="timeline-container">
+                <div id="timeline-progress-bar" class="absolute top-0 w-1 bg-blue-600" style="left: 50%; margin-left: -2px; z-index: 1; height: 0px; transition: height 0.1s linear;"></div>
+                <!-- Step 1 -->
+                <div class="timeline-item left scroll-animate scroll-fade-right">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-magnifying-glass-chart text-xl"></i>
                     </div>
-                    <div class="pt-1 pb-16">
-                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP <span class="count-up-number" data-target="1">0</span></p>
-                        <h3 class="text-2xl font-bold mb-3">Discovery & Strategy</h3>
+                    <div class="timeline-content">
+                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP 1</p>
+                        <h3 class="text-xl font-bold mb-2">Discovery & Strategy</h3>
                         <p class="text-gray-600">We begin with in-depth consultations to understand your vision, goals, and technical requirements, crafting a detailed project roadmap for success.</p>
                     </div>
                 </div>
-
-                <!-- Step 2: Design -->
-                <div class="flex scroll-animate scroll-fade-up" style="transition-delay: 300ms;">
-                    <div class="flex flex-col items-center mr-6">
-                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow-md">
-                            <i class="fas fa-pencil-ruler text-2xl"></i>
-                        </div>
-                        <div class="w-px h-full bg-blue-200"></div>
+                <!-- Step 2 -->
+                <div class="timeline-item right scroll-animate scroll-fade-left">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-pen-ruler text-xl"></i>
                     </div>
-                    <div class="pt-1 pb-16">
-                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP <span class="count-up-number" data-target="2">0</span></p>
-                        <h3 class="text-2xl font-bold mb-3">UI/UX Design</h3>
-                        <p class="text-gray-600">Our design team creates intuitive, user-centric wireframes and prototypes. We focus on delivering a seamless and engaging user experience that aligns with your brand.</p>
+                    <div class="timeline-content">
+                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP 2</p>
+                        <h3 class="text-xl font-bold mb-2">UI/UX Design</h3>
+                        <p class="text-gray-600">Our design team creates intuitive, user-centric wireframes and prototypes, focusing on a seamless and engaging user experience that aligns with your brand.</p>
                     </div>
                 </div>
-
-                <!-- Step 3: Develop -->
-                <div class="flex scroll-animate scroll-fade-up" style="transition-delay: 450ms;">
-                    <div class="flex flex-col items-center mr-6">
-                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow-md">
-                            <i class="fas fa-code text-2xl"></i>
-                        </div>
-                        <div class="w-px h-full bg-blue-200"></div>
+                <!-- Step 3 -->
+                <div class="timeline-item left scroll-animate scroll-fade-right">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-code text-xl"></i>
                     </div>
-                    <div class="pt-1 pb-16">
-                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP <span class="count-up-number" data-target="3">0</span></p>
-                        <h3 class="text-2xl font-bold mb-3">Development</h3>
-                        <p class="text-gray-600">Following agile methodologies, our expert developers write clean, efficient, and scalable code, bringing the approved designs to life and building a robust product.</p>
+                    <div class="timeline-content">
+                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP 3</p>
+                        <h3 class="text-xl font-bold mb-2">Development</h3>
+                        <p class="text-gray-600">Following agile methodologies, our expert developers write clean, efficient, and scalable code, bringing the approved designs to life with a robust product.</p>
                     </div>
                 </div>
-
-                <!-- Step 4: Test -->
-                <div class="flex scroll-animate scroll-fade-up" style="transition-delay: 600ms;">
-                    <div class="flex flex-col items-center mr-6">
-                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow-md">
-                            <i class="fas fa-vial text-2xl"></i>
-                        </div>
-                        <div class="w-px h-full bg-blue-200"></div>
+                <!-- Step 4 -->
+                <div class="timeline-item right scroll-animate scroll-fade-left">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-bug-slash text-xl"></i>
                     </div>
-                    <div class="pt-1 pb-16">
-                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP <span class="count-up-number" data-target="4">0</span></p>
-                        <h3 class="text-2xl font-bold mb-3">Quality Assurance</h3>
+                    <div class="timeline-content">
+                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP 4</p>
+                        <h3 class="text-xl font-bold mb-2">Quality Assurance</h3>
                         <p class="text-gray-600">We conduct rigorous testing across all devices and scenarios to identify and fix bugs, ensuring the final product is stable, secure, and high-performing.</p>
                     </div>
                 </div>
-
-                <!-- Step 5: Deploy -->
-                <div class="flex scroll-animate scroll-fade-up" style="transition-delay: 750ms;">
-                    <div class="flex flex-col items-center mr-6">
-                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow-md">
-                            <i class="fas fa-rocket text-2xl"></i>
-                        </div>
-                        <div class="w-px h-full bg-blue-200"></div>
+                <!-- Step 5 -->
+                <div class="timeline-item left scroll-animate scroll-fade-right">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-rocket text-xl"></i>
                     </div>
-                    <div class="pt-1 pb-16">
-                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP <span class="count-up-number" data-target="5">0</span></p>
-                        <h3 class="text-2xl font-bold mb-3">Deployment</h3>
+                    <div class="timeline-content">
+                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP 5</p>
+                        <h3 class="text-xl font-bold mb-2">Deployment</h3>
                         <p class="text-gray-600">We manage the entire deployment process, ensuring a smooth and seamless launch of your application to the live environment with minimal downtime.</p>
                     </div>
                 </div>
-
-                <!-- Step 6: Support -->
-                <div class="flex scroll-animate scroll-fade-up" style="transition-delay: 900ms;">
-                    <div class="flex flex-col items-center mr-6">
-                        <div class="flex-shrink-0 w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shadow-md">
-                            <i class="fas fa-headset text-2xl"></i>
-                        </div>
+                <!-- Step 6 -->        <div class="timeline-item right scroll-animate scroll-fade-left">
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-gears text-xl"></i>
                     </div>
-                    <div class="pt-1">
-                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP <span class="count-up-number" data-target="6">0</span></p>
-                        <h3 class="text-2xl font-bold mb-3">Maintenance & Support</h3>
+                    <div class="timeline-content">
+                        <p class="text-sm text-blue-600 font-semibold mb-1">STEP 6</p>
+                        <h3 class="text-xl font-bold mb-2">Maintenance & Support</h3>
                         <p class="text-gray-600">Our partnership doesn't end at launch. We provide ongoing maintenance, updates, and support to ensure your solution remains effective and secure long-term.</p>
                     </div>
                 </div>
             </div>
+            <!-- CTA Button -->
+            <div class="text-center mt-16 scroll-animate scroll-fade-up" style="transition-delay: 700ms;">
+                <a href="from.html" class="inline-block bg-blue-600 text-white font-semibold py-4 px-10 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    Ready to Start Your Project?
+                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
         </section>
     <!-- =================================================================== -->
     <!-- Our Process Section End -->
@@ -485,60 +1449,72 @@
     <!-- =================================================================== -->
     <!-- Industries Section Start -->
     <!-- =================================================================== -->
-    <section id="industries" class="py-20 bg-gray-50">
+    <section id="industries" class="py-20 bg-white scroll-mt-28">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">Industries We Serve</h2>
+            <h2 class="section-heading-gradient text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">Industries We Serve</h2>
             <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto scroll-animate scroll-fade-up" style="transition-delay: 100ms;">Domain expertise across multiple sectors to deliver targeted solutions</p>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+
+            <div id="industry-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
                 <!-- Industry 1 -->
-                <div class="group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-blue-600 transition-all duration-300 scroll-animate scroll-fade-up">
-                    <div class="w-24 h-24 mx-auto mb-6 bg-gray-100 group-hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-500 group-hover:text-white shadow-lg transition-all duration-300">
-                        <i class="fas fa-heartbeat text-4xl"></i>
+                <button class="js-industry-modal-trigger industry-card group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-red-600 transition-all duration-300 scroll-animate scroll-fade-up w-full" data-category="healthcare" style="transition-property: opacity, transform;"
+                    data-title="Healthcare Technology Solutions"
+                    data-content="<p>We develop HIPAA-compliant software, including Electronic Health Records (EHR), telemedicine platforms, and patient management systems. Our solutions enhance patient care, streamline hospital operations, and secure sensitive medical data.</p><h4 class='font-semibold text-lg mt-4 mb-2'>Key Offerings:</h4><ul class='list-disc list-inside text-left space-y-1 text-gray-600'><li>Custom EHR/EMR Systems</li><li>Telehealth & Remote Patient Monitoring</li><li>Medical Billing & Practice Management Software</li><li>AI-powered Diagnostic Tools</li></ul>">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-red-100 group-hover:bg-red-600 rounded-full flex items-center justify-center text-red-600 group-hover:text-white shadow-lg transition-all duration-300">
+                        <i class="industry-card-icon fa-solid fa-heart-pulse text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Healthcare</h3>
                     <p class="text-gray-600 text-sm">Improving patient care with innovative EHR and telemedicine solutions.</p>
-                </div>
+                </button>
                 <!-- Industry 2 -->
-                <div class="group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-blue-600 transition-all duration-300 scroll-animate scroll-fade-up" style="transition-delay: 100ms;">
-                    <div class="w-24 h-24 mx-auto mb-6 bg-gray-100 group-hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-500 group-hover:text-white shadow-lg transition-all duration-300">
-                        <i class="fas fa-shopping-cart text-4xl"></i>
+                <button class="js-industry-modal-trigger industry-card group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-purple-600 transition-all duration-300 scroll-animate scroll-fade-up w-full" style="transition-delay: 100ms; transition-property: opacity, transform;" data-category="e-commerce"
+                    data-title="E-commerce & Retail Solutions"
+                    data-content="<p>From custom storefronts to scalable backend systems, we build comprehensive e-commerce solutions. We integrate payment gateways, manage inventory systems, and create personalized shopping experiences to boost sales and customer loyalty.</p><h4 class='font-semibold text-lg mt-4 mb-2'>Key Offerings:</h4><ul class='list-disc list-inside text-left space-y-1 text-gray-600'><li>Custom E-commerce Platforms</li><li>Payment Gateway Integration</li><li>Inventory Management Systems</li><li>Personalized Recommendation Engines</li></ul>">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-purple-100 group-hover:bg-purple-600 rounded-full flex items-center justify-center text-purple-600 group-hover:text-white shadow-lg transition-all duration-300">
+                        <i class="industry-card-icon fa-solid fa-building text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">E-commerce</h3>
                     <p class="text-gray-600 text-sm">Enhancing online shopping experiences with scalable platforms.</p>
-                </div>
+                </button>
                 <!-- Industry 3 -->
-                <div class="group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-blue-600 transition-all duration-300 scroll-animate scroll-fade-up" style="transition-delay: 200ms;">
-                    <div class="w-24 h-24 mx-auto mb-6 bg-gray-100 group-hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-500 group-hover:text-white shadow-lg transition-all duration-300">
-                        <i class="fas fa-piggy-bank text-4xl"></i>
+                <button class="js-industry-modal-trigger industry-card group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-green-600 transition-all duration-300 scroll-animate scroll-fade-up w-full" style="transition-delay: 200ms; transition-property: opacity, transform;" data-category="fintech"
+                    data-title="Financial Technology (Fintech) Services"
+                    data-content="<p>We provide secure and innovative solutions for the financial sector, including custom banking software, payment processing systems, and blockchain applications. Our expertise ensures compliance with financial regulations while driving digital transformation.</p><h4 class='font-semibold text-lg mt-4 mb-2'>Key Offerings:</h4><ul class='list-disc list-inside text-left space-y-1 text-gray-600'><li>Digital Banking Platforms</li><li>Secure Payment Processing</li><li>Robo-Advisors & Trading Bots</li><li>Blockchain & Cryptocurrency Solutions</li></ul>">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-green-100 group-hover:bg-green-600 rounded-full flex items-center justify-center text-green-600 group-hover:text-white shadow-lg transition-all duration-300">
+                        <i class="industry-card-icon fa-solid fa-piggy-bank text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Fintech</h3>
                     <p class="text-gray-600 text-sm">Driving innovation in banking and payments with secure technology.</p>
-                </div>
+                </button>
                 <!-- Industry 4 -->
-                <div class="group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-blue-600 transition-all duration-300 scroll-animate scroll-fade-up" style="transition-delay: 300ms;">
-                    <div class="w-24 h-24 mx-auto mb-6 bg-gray-100 group-hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-500 group-hover:text-white shadow-lg transition-all duration-300">
-                        <i class="fas fa-home text-4xl"></i>
+                <button class="js-industry-modal-trigger industry-card group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-amber-600 transition-all duration-300 scroll-animate scroll-fade-up w-full" style="transition-delay: 300ms; transition-property: opacity, transform;" data-category="real-estate"
+                    data-title="Real Estate Technology"
+                    data-content="<p>Our solutions for the real estate industry include property management systems (PMS), virtual tour applications, and smart building integrations. We help agencies and developers streamline operations and enhance client engagement.</p><h4 class='font-semibold text-lg mt-4 mb-2'>Key Offerings:</h4><ul class='list-disc list-inside text-left space-y-1 text-gray-600'><li>Property Management Systems (PMS)</li><li>Virtual & Augmented Reality Tours</li><li>Real Estate CRM Platforms</li><li>Smart Building IoT Solutions</li></ul>">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-amber-100 group-hover:bg-amber-600 rounded-full flex items-center justify-center text-amber-600 group-hover:text-white shadow-lg transition-all duration-300">
+                        <i class="industry-card-icon fa-solid fa-house text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Real Estate</h3>
                     <p class="text-gray-600 text-sm">Digital transformation for property management and smart buildings.</p>
-                </div>
+                </button>
                 <!-- Industry 5 -->
-                <div class="group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-blue-600 transition-all duration-300 scroll-animate scroll-fade-up" style="transition-delay: 400ms;">
-                    <div class="w-24 h-24 mx-auto mb-6 bg-gray-100 group-hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-500 group-hover:text-white shadow-lg transition-all duration-300">
-                        <i class="fas fa-graduation-cap text-4xl"></i>
+                <button class="js-industry-modal-trigger industry-card group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-blue-600 transition-all duration-300 scroll-animate scroll-fade-up w-full" style="transition-delay: 400ms; transition-property: opacity, transform;" data-category="edtech"
+                    data-title="Education Technology (EdTech)"
+                    data-content="<p>We create engaging e-learning platforms, learning management systems (LMS), and virtual classroom solutions. Our goal is to make education more accessible, interactive, and effective through technology.</p><h4 class='font-semibold text-lg mt-4 mb-2'>Key Offerings:</h4><ul class='list-disc list-inside text-left space-y-1 text-gray-600'><li>Learning Management Systems (LMS)</li><li>Virtual Classroom Software</li><li>Interactive E-learning Content</li><li>Student Performance Analytics</li></ul>">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-blue-100 group-hover:bg-blue-600 rounded-full flex items-center justify-center text-blue-600 group-hover:text-white shadow-lg transition-all duration-300">
+                        <i class="industry-card-icon fa-solid fa-graduation-cap text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">EdTech</h3>
                     <p class="text-gray-600 text-sm">Engaging e-learning platforms that facilitate knowledge sharing.</p>
-                </div>
+                </button>
                 <!-- Industry 6 -->
-                <div class="group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-blue-600 transition-all duration-300 scroll-animate scroll-fade-up" style="transition-delay: 500ms;">
-                    <div class="w-24 h-24 mx-auto mb-6 bg-gray-100 group-hover:bg-blue-600 rounded-full flex items-center justify-center text-gray-500 group-hover:text-white shadow-lg transition-all duration-300">
-                        <i class="fas fa-truck text-4xl"></i>
+                <button class="js-industry-modal-trigger industry-card group bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl hover:-translate-y-2 border-b-4 border-transparent hover:border-teal-600 transition-all duration-300 scroll-animate scroll-fade-up w-full" style="transition-delay: 500ms; transition-property: opacity, transform;" data-category="logistics"
+                    data-title="Logistics & Supply Chain Management"
+                    data-content="<p>We optimize supply chains with custom software for fleet management, real-time tracking, warehouse inventory systems, and route optimization. Our solutions increase efficiency and reduce operational costs.</p><h4 class='font-semibold text-lg mt-4 mb-2'>Key Offerings:</h4><ul class='list-disc list-inside text-left space-y-1 text-gray-600'><li>Fleet Management & Tracking</li><li>Warehouse Management Systems (WMS)</li><li>Route Optimization Software</li><li>Supply Chain Analytics</li></ul>">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-teal-100 group-hover:bg-teal-600 rounded-full flex items-center justify-center text-teal-600 group-hover:text-white shadow-lg transition-all duration-300">
+                        <i class="industry-card-icon fa-solid fa-truck text-4xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Logistics</h3>
                     <p class="text-gray-600 text-sm">Optimizing supply chains with fleet tracking and inventory solutions.</p>
-                </div>
+                </button>
             </div>
         </div>
     </section>
@@ -549,7 +1525,7 @@
     <!-- =================================================================== -->
     <!-- Testimonials Section Start -->
     <!-- =================================================================== -->
-    <section id="testimonials" class="py-20 bg-blue-600 text-white">
+    <section id="testimonials" class="py-20 bg-blue-600 text-white scroll-mt-28" role="region" aria-roledescription="carousel" aria-label="Client Testimonials">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">What Our Clients Say</h2>
             <p class="text-xl text-center text-blue-100 mb-16 max-w-3xl mx-auto scroll-animate scroll-fade-up" style="transition-delay: 100ms;">Success stories from businesses we've helped transform</p>
@@ -557,46 +1533,43 @@
             <div class="relative max-w-3xl mx-auto scroll-animate scroll-zoom-in">
                 <!-- Slider Container -->
                 <div class="overflow-hidden rounded-lg bg-blue-700 shadow-xl"> 
-                    <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
+                    <div id="testimonial-slider" class="grid" aria-live="off" tabindex="0">
                         <!-- Slide 1 -->
-                        <div class="testimonial-slide w-full flex-shrink-0 p-8 md:p-12 text-center">
+                        <div class="testimonial-slide w-full p-8 md:p-12 text-center col-start-1 row-start-1 transition-opacity duration-500 ease-in-out" role="group" aria-roledescription="slide">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=80&h=80&auto=format&fit=crop" alt="Client portrait" class="rounded-full w-20 h-20 mx-auto mb-4 object-cover" width="80" height="80" loading="lazy" decoding="async">
                             <p class="text-lg italic mb-4">"Skyvex transformed our digital presence and helped us streamline our operations. Their team is knowledgeable, responsive, and delivered beyond our expectations."</p>
-                            <h4 class="font-bold text-xl">Alex Johnson</h4>
-                            <p class="text-blue-200">CTO, Innovate Corp</p>
+                            <p class="text-blue-200 mt-6 font-semibold">CTO, Innovate Corp</p>
                             <div class="text-yellow-400 mt-4">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                             </div>
                         </div>
                         <!-- Slide 2 -->
-                        <div class="testimonial-slide w-full flex-shrink-0 p-8 md:p-12 text-center">
+                        <div class="testimonial-slide w-full p-8 md:p-12 text-center col-start-1 row-start-1 transition-opacity duration-500 ease-in-out opacity-0" role="group" aria-roledescription="slide">
                             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=80&h=80&auto=format&fit=crop" alt="Client portrait" class="rounded-full w-20 h-20 mx-auto mb-4 object-cover" width="80" height="80" loading="lazy" decoding="async">
                             <p class="text-lg italic mb-4">"Working with Skyvex has been a game-changer for our startup. Their expertise in technology is unmatched and their agile approach helped us launch ahead of schedule."</p>
-                            <h4 class="font-bold text-xl">Samantha Lee</h4>
-                            <p class="text-blue-200">Founder, RetailNext</p>
+                            <p class="text-blue-200 mt-6 font-semibold">Founder, RetailNext</p>
                             <div class="text-yellow-400 mt-4">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                             </div>
                         </div>
                         <!-- Slide 3 -->
-                        <div class="testimonial-slide w-full flex-shrink-0 p-8 md:p-12 text-center">
+                        <div class="testimonial-slide w-full p-8 md:p-12 text-center col-start-1 row-start-1 transition-opacity duration-500 ease-in-out opacity-0" role="group" aria-roledescription="slide">
                             <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=80&h=80&auto=format&fit=crop" alt="Client portrait" class="rounded-full w-20 h-20 mx-auto mb-4 object-cover" width="80" height="80" loading="lazy" decoding="async">
                             <p class="text-lg italic mb-4">"The AI solutions developed by Skyvex have automated 80% of our manual processes. Their deep understanding of financial regulations was particularly impressive."</p>
-                            <h4 class="font-bold text-xl">David Chen</h4>
-                            <p class="text-blue-200">Director, FinSecure</p>
+                            <p class="text-blue-200 mt-6 font-semibold">Director, FinSecure</p>
                             <div class="text-yellow-400 mt-4">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Navigation Buttons -->
-                <button id="testimonial-prev" class="absolute top-1/2 -left-4 md:-left-6 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full w-10 h-10 flex items-center justify-center transition focus:outline-none hover:scale-110">
-                    <i class="fas fa-chevron-left"></i>
+                <button id="testimonial-prev" class="absolute top-1/2 -left-4 md:-left-6 transform -translate-y-1/2 bg-blue-500 hover:bg-blue-400 text-white rounded-full w-10 h-10 flex items-center justify-center transition focus:outline-none hover:scale-110" aria-label="Previous testimonial" aria-controls="testimonial-slider">
+                    <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <button id="testimonial-next" class="absolute top-1/2 -right-4 md:-right-6 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full w-10 h-10 flex items-center justify-center transition focus:outline-none hover:scale-110">
-                    <i class="fas fa-chevron-right"></i>
+                <button id="testimonial-next" class="absolute top-1/2 -right-4 md:-right-6 transform -translate-y-1/2 bg-blue-500 hover:bg-blue-400 text-white rounded-full w-10 h-10 flex items-center justify-center transition focus:outline-none hover:scale-110" aria-label="Next testimonial" aria-controls="testimonial-slider">
+                    <i class="fa-solid fa-chevron-right"></i>
                 </button>
 
                 <!-- Navigation Dots -->
@@ -613,15 +1586,15 @@
     <!-- =================================================================== -->
     <!-- Contact Section Start -->
     <!-- =================================================================== -->
-    <section id="contact" class="py-20 bg-gray-50">
+    <section id="contact" class="py-20 bg-white scroll-mt-28">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">Get In Touch</h2>
+            <h2 class="section-heading-gradient text-3xl md:text-4xl font-bold text-center mb-4 scroll-animate scroll-fade-up">Get In Touch</h2>
             <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto scroll-animate scroll-fade-up" style="transition-delay: 100ms;">Ready to discuss your project? We'd love to hear from you.</p>
             
             <div class="flex flex-col lg:flex-row gap-12">
                 <!-- Contact Form -->
-                <div class="lg:w-1/2 scroll-animate scroll-fade-left"><!-- TODO: Replace YOUR_FORM_ID with your actual Formspree endpoint -->
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white p-8 rounded-lg shadow-md">
+                <div class="lg:w-1/2 scroll-animate scroll-fade-left">
+                    <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white/60 backdrop-blur-sm p-8 rounded-lg shadow-lg">
                         <div class="mb-6">
                             <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
                             <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
@@ -638,21 +1611,22 @@
                             <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
                             <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 hover:shadow-lg">
+                        <button type="submit" class="form-submit-btn w-full font-bold py-3 px-6 rounded-lg transform hover:scale-105 hover:shadow-lg">
                             Send Message
                         </button>
+                        <div id="contact-form-status" class="mt-4 text-center"></div>
                     </form>
                 </div>
                 
                 <!-- Contact Info -->
                 <div class="lg:w-1/2 scroll-animate scroll-fade-right">
-                    <div class="bg-white p-8 rounded-lg shadow-md h-full">
+                    <div class="bg-white/60 backdrop-blur-sm p-8 rounded-lg shadow-lg h-full">
                         <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
                         
                         <div class="space-y-6">
                             <div class="flex items-start">
                                 <div class="text-blue-600 mr-4 mt-1">
-                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                    <i class="fa-solid fa-location-dot text-xl"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-bold mb-1">Headquarters</h4>
@@ -662,7 +1636,7 @@
                             
                             <div class="flex items-start">
                                 <div class="text-blue-600 mr-4 mt-1">
-                                    <i class="fas fa-envelope text-xl"></i>
+                                    <i class="fa-solid fa-envelope text-xl"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-bold mb-1">Email Us</h4>
@@ -672,11 +1646,11 @@
                             
                             <div class="flex items-start">
                                 <div class="text-blue-600 mr-4 mt-1">
-                                    <i class="fas fa-phone-alt text-xl"></i>
+                                    <i class="fa-solid fa-phone-flip text-xl"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-bold mb-1">Call Us</h4>
-                                    <p class="text-gray-600">+91 12345 67890<br>(Mon-Fri, 9AM-6PM IST)</p>
+                                    <p class="text-gray-600">+91 77097 41447<br>(Mon-Fri, 9AM-6PM IST)</p>
                                 </div>
                             </div>
                         </div>
@@ -684,17 +1658,17 @@
                         <div class="mt-8">
                             <h4 class="font-bold mb-4">Follow Us</h4>
                             <div class="flex space-x-4">
-                                <a href="https://www.linkedin.com/company/skyvex-it-solutions" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">
-                                    <i class="fab fa-linkedin-in text-2xl"></i>
+                                <a href="https://www.linkedin.com/company/skyvex-it-solutions" target="_blank" rel="noopener noreferrer" class="social-icon text-blue-600 hover:text-blue-800 transition duration-300" aria-label="Follow us on LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in text-2xl"></i>
                                 </a>
-                                <a href="https://twitter.com/skyvex" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">
-                                    <i class="fab fa-twitter text-2xl"></i>
+                                <a href="https://twitter.com/skyvex" target="_blank" rel="noopener noreferrer" class="social-icon text-blue-600 hover:text-blue-800 transition duration-300" aria-label="Follow us on Twitter">
+                                    <i class="fa-brands fa-twitter text-2xl"></i>
                                 </a>
-                                <a href="https://www.facebook.com/skyvex" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">
-                                    <i class="fab fa-facebook-f text-2xl"></i>
+                                <a href="https://www.facebook.com/skyvex" target="_blank" rel="noopener noreferrer" class="social-icon text-blue-600 hover:text-blue-800 transition duration-300" aria-label="Follow us on Facebook">
+                                    <i class="fa-brands fa-facebook-f text-2xl"></i>
                                 </a>
-                                <a href="https://www.instagram.com/skyvex" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">
-                                    <i class="fab fa-instagram text-2xl"></i>
+                                <a href="https://www.instagram.com/skyvex" target="_blank" rel="noopener noreferrer" class="social-icon text-blue-600 hover:text-blue-800 transition duration-300" aria-label="Follow us on Instagram">
+                                    <i class="fa-brands fa-instagram text-2xl"></i>
                                 </a>
                             </div>
                         </div>
@@ -710,62 +1684,60 @@
     <!-- =================================================================== -->
     <!-- Map Section Start -->
     <!-- =================================================================== -->
-    <div class="h-96 w-full">
+    <section class="h-96 w-full" aria-labelledby="map-heading">
+        <h2 id="map-heading" class="sr-only">Our Location</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.88654015206!2d77.49085271171281!3d12.953959987043192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf15e5ddf09ec6b27!2sBangalore%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="Google Map showing the location of Bangalore, Karnataka"></iframe>
+    </section>
     <!-- =================================================================== -->
     <!-- Map Section End -->
     <!-- =================================================================== -->
+    </main>
 
     <!-- =================================================================== -->
     <!-- Footer Start -->
     <!-- =================================================================== -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="mb-8 md:mb-0">
-                    <img src="SKYVEX.png" alt="Skyvex IT Solutions Company Logo" class="h-20 mb-16" width="250" height="80" loading="lazy" decoding="async">
-                    <p class="text-gray-400">Empowering businesses through innovative technology solutions since 2015.</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Column 1: Brand Info & Socials -->
+                <div class="md:col-span-2 mb-8 md:mb-0">
+                    <a href="#home" aria-label="Go to homepage">
+                        <img src="SKYVEX.png" alt="Skyvex IT Solutions Company Logo" class="h-20 w-auto mb-6" width="250" height="80" loading="lazy" decoding="async">
+                    </a>
+                    <p class="text-gray-400 max-w-md">Empowering businesses through innovative technology solutions since 2019.</p>
+                    <div class="mt-6 flex space-x-5">
+                        <a href="https://www.linkedin.com/company/skyvex-it-solutions" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon text-gray-400 hover:text-white transition"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
+                        <a href="https://twitter.com/skyvex" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="social-icon text-gray-400 hover:text-white transition"><i class="fa-brands fa-twitter text-xl"></i></a>
+                        <a href="https://www.facebook.com/skyvex" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon text-gray-400 hover:text-white transition"><i class="fa-brands fa-facebook-f text-xl"></i></a>
+                        <a href="https://www.instagram.com/skyvex" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon text-gray-400 hover:text-white transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    </div>
                 </div>
                 
-                <div>
+                <!-- Column 2: Quick Links -->
+                <div class="md:col-span-1">
                     <h4 class="font-bold text-lg mb-6">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
-                        <li><a href="#process" class="text-gray-400 hover:text-white transition">Our Process</a></li>
-                        <li><a href="#industries" class="text-gray-400 hover:text-white transition">Industries</a></li>
-                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimonials</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        <li><a href="#about" class="footer-link text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#services" class="footer-link text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="#process" class="footer-link text-gray-400 hover:text-white">Our Process</a></li>
+                        <li><a href="#contact" class="footer-link text-gray-400 hover:text-white">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div>
-                    <h4 class="font-bold text-lg mb-6">Services</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Custom Software</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Web & Mobile Apps</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Cloud Solutions</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Data Analytics</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition">AI/ML Solutions</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition">IT Consulting</a></li>
-                    </ul>
-                </div>
-                
-                <div>
+                <!-- Column 3: Contact Info -->
+                <div class="md:col-span-1">
                     <h4 class="font-bold text-lg mb-6">Contact Info</h4>
                     <address class="not-italic text-gray-400">
                         <p class="mb-3">123 Tech Park<br>Bangalore, Karnataka<br>India - 560001</p>
                         <p class="mb-3"><a href="mailto:info@skyvexit.com" class="hover:text-white">info@skyvexit.com</a></p>
-                        <p><a href="tel:+911234567890" class="hover:text-white"><b>+91 12345 67890</b></a></p>
+                        <p><a href="tel:+917709741447" class="hover:text-white"><b>+91 7709741447</b></a></p>
                     </address>
                 </div>
             </div>
             
             <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Skyvex IT Solutions. All rights reserved.</p>
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© <span id="copyright-year">2019</span> Skyvex IT Solutions. All rights reserved.</p>
                 <div class="flex space-x-6">
                     <a href="privacy-policy.html" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
                     <a href="terms-of-service.html" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
@@ -786,16 +1758,807 @@
         <p class="text-sm">
             We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies.
         </p>
-        <button id="cookie-accept-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-md whitespace-nowrap">
+        <button id="cookie-accept-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-md whitespace-nowrap" style="background-color: var(--color-primary);">
             Accept
         </button>
     </div>
     <!-- WhatsApp Floating Action Button -->
-    <!-- TODO: Replace '1234567890' with your full WhatsApp number (e.g., 15551234567 for USA) -->
-    <a id="whatsapp-fab" href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="shadow-lg">
-        <i class="fab fa-whatsapp"></i>
+    <a id="whatsapp-fab" href="https://wa.me/917709741447" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp whatsapp-fab-logo"></i>
+        <div class="whatsapp-fab-hover-content">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Chat with us</span>
+        </div>
     </a>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Go to top of page" class="shadow-lg">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <!-- Service Details Modal -->
+    <div id="service-modal" class="modal-container fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" aria-labelledby="modal-title" role="dialog" aria-modal="true" aria-hidden="true">
+        <div id="service-modal-box" class="modal-box bg-white rounded-lg shadow-xl w-full max-w-2xl transform -translate-y-10 transition-all duration-300">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+                <h3 id="modal-title" class="text-2xl font-bold text-gray-800">Service Details</h3>
+                <button id="modal-close-btn" class="text-gray-500 hover:text-gray-800" aria-label="Close modal">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+            </div>
+            <div id="modal-content" class="p-6 max-h-[60vh] overflow-y-auto">
+                <!-- Content is dynamically inserted here -->
+            </div>
+        </div>
+    </button>
+    <!-- Project Idea Modal -->
+    <div id="project-modal" class="modal-container fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" aria-labelledby="project-idea-modal-title" role="dialog" aria-modal="true">
+        <div id="project-modal-box" class="modal-box relative w-full max-w-5xl bg-white rounded-2xl shadow-2xl grid grid-cols-1 lg:grid-cols-2 overflow-hidden transform -translate-y-10 transition-all duration-300">
+            <!-- Close Button -->
+            <button id="project-modal-close-btn" class="absolute top-4 right-6 text-slate-400 hover:text-slate-800 z-20 transition-colors" aria-label="Close modal">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+            <!-- Left Column: Info -->
+            <div class="bg-slate-800 p-8 md:p-12 text-white flex-col justify-center hidden lg:flex">
+                <div class="mb-6">
+                    <i class="fa-solid fa-rocket text-3xl text-blue-400"></i>
+                </div>
+                <h1 id="project-idea-modal-title" class="text-3xl md:text-4xl font-bold mb-4">Let's Build Something Great.</h1>
+                <p class="text-slate-300 leading-relaxed">Your next big idea starts here. Provide us with the details, and our team of experts will help you map out the journey from concept to reality. We're excited to partner with you.</p>
+                <div class="mt-8 border-t border-slate-700 pt-6">
+                    <p class="text-sm text-slate-400">For general inquiries, email us at <a href="mailto:hello@skyvex.com" class="text-blue-400 hover:underline">hello@skyvex.com</a></p>
+                </div>
+            </div>
+            <!-- Right Column: Form -->
+            <div class="p-8 md:p-12 max-h-[90vh] lg:max-h-none overflow-y-auto">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 lg:hidden">Let's Build Something Great.</h2>
+                <form id="project-idea-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <!-- Contact Information -->
+                    <fieldset class="mb-8"><legend class="text-xl font-semibold text-gray-800 pb-2 mb-6">Your Contact Information</legend><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label for="name" class="block text-sm font-medium text-gray-600 mb-1">Full Name</label><input type="text" id="name" name="name" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></div><div><label for="email" class="block text-sm font-medium text-gray-600 mb-1">Email Address</label><input type="email" id="email" name="email" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></div></div></fieldset>
+                    <!-- Project Details -->
+                    <fieldset class="mb-8"><legend class="text-xl font-semibold text-gray-800 pb-2 mb-6">About Your Idea</legend><div class="space-y-6"><div><label for="project-title" class="block text-sm font-medium text-gray-600 mb-1">Project Title</label><input type="text" id="project-title" name="project_title" required placeholder="e.g., 'AI-Powered Customer Support Chatbot'" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></div><div><label for="project-description" class="block text-sm font-medium text-gray-600 mb-1">Detailed Description</label><textarea id="project-description" name="project_description" rows="5" required placeholder="Describe the problem you're solving, your target audience, and the core features of your idea." class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></textarea></div></div></fieldset>
+                    <!-- Project Scope -->
+                    <fieldset class="mb-8"><legend class="text-xl font-semibold text-gray-800 pb-2 mb-6">Project Scope</legend><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="block text-sm font-medium text-gray-600 mb-2">What type of project is it?</label><div class="space-y-2"><label class="custom-radio flex items-center cursor-pointer"><input type="radio" name="project_type" value="Web App"> <span class="radio-dot mr-2"></span> <span class="text-gray-700">Web Application</span></label><label class="custom-radio flex items-center cursor-pointer"><input type="radio" name="project_type" value="Mobile App"> <span class="radio-dot mr-2"></span> <span class="text-gray-700">Mobile App (iOS/Android)</span></label><label class="custom-radio flex items-center cursor-pointer"><input type="radio" name="project_type" value="Software"> <span class="radio-dot mr-2"></span> <span class="text-gray-700">Custom Software</span></label><label class="custom-radio flex items-center cursor-pointer"><input type="radio" name="project_type" value="Other"> <span class="radio-dot mr-2"></span> <span class="text-gray-700">Other</span></label></div></div><div><label for="budget" class="block text-sm font-medium text-gray-600 mb-2">Estimated Budget (USD)</label><select id="budget" name="budget" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"><option>Select a range</option><option value="<5k">&lt; $5,000</option><option value="5k-10k">$5,000 - $10,000</option><option value="10k-25k">$10,000 - $25,000</option><option value="25k-50k">$25,000 - $50,000</option><option value=">50k">&gt; $50,000</option><option value="Not Sure">I'm not sure yet</option></select></div></div></fieldset>
+                    <!-- Submission -->
+                    <div class="mt-10 text-center">
+                        <button type="submit" class="form-submit-btn w-full font-bold py-3 px-10 rounded-lg text-lg">Submit Project Idea</button>
+                        <div id="form-status" class="mt-4 text-center"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-    <script src="script.js" defer></script>
+    <script>
+        (function() {
+            "use strict";
+
+            /**
+             * Handles the preloader hiding logic.
+             */
+            function initPreloader() {
+                const preloader = document.getElementById('preloader');
+                if (preloader) {
+                    window.addEventListener('load', () => {
+                        preloader.classList.add('preloader-hidden');
+                        preloader.addEventListener('transitionend', () => {
+                            preloader.style.display = 'none';
+                        }, { once: true });
+                    });
+                }
+            }
+
+            /**
+             * Sets up the dynamic copyright year in the footer.
+             */
+            function initCopyrightYear() {
+                const copyrightYearEl = document.getElementById('copyright-year');
+                if (copyrightYearEl) {
+                    copyrightYearEl.textContent = new Date().getFullYear();
+                }
+            }
+
+            /**
+             * Initializes smooth scrolling for all anchor links.
+             */
+            function initSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(this.getAttribute('href'));
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+                });
+            }
+
+            /**
+             * Sets up an observer to highlight the current navigation link on scroll.
+             */
+            function initNavObserver() {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('#desktop-menu a, #mobile-menu a');
+                if (sections.length === 0 || navLinks.length === 0) return;
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.getAttribute('id');
+                            navLinks.forEach(link => {
+                                link.classList.remove('nav-active');
+                                link.removeAttribute('aria-current');
+                                // The link's href needs to match the section's id
+                                if (link.getAttribute('href') === `#${id}`) {
+                                    link.classList.add('nav-active');
+                                    link.setAttribute('aria-current', 'page');
+                                }
+                            });
+                        }
+                    });
+                }, { 
+                    rootMargin: '-50% 0px -50% 0px' // Triggers when the section is in the middle of the viewport
+                });
+
+                sections.forEach(section => observer.observe(section));
+            }
+
+            /**
+             * Sets up the accessible mobile menu, including focus trapping.
+             */
+            function initMobileMenu() {
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenuButton || !mobileMenu) return;
+
+                const menuIcon = mobileMenuButton.querySelector('i');
+                const focusableElements = Array.from(mobileMenu.querySelectorAll('a'));
+
+                const handleMenuKeydown = (e) => {
+                    if (e.key === 'Escape') return closeMenu();
+                    if (e.key === 'Tab') {
+                        if (e.shiftKey && document.activeElement === focusableElements[0]) {
+                            e.preventDefault();
+                            focusableElements[focusableElements.length - 1].focus();
+                        } else if (!e.shiftKey && document.activeElement === focusableElements[focusableElements.length - 1]) {
+                            e.preventDefault();
+                            focusableElements[0].focus();
+                        }
+                    }
+                };
+
+                const openMenu = () => {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.replace('fa-bars', 'fa-xmark');
+                    mobileMenuButton.setAttribute('aria-expanded', 'true');
+                    document.addEventListener('keydown', handleMenuKeydown);
+                    focusableElements[0]?.focus();
+                };
+
+                const closeMenu = () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.replace('fa-xmark', 'fa-bars');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    document.removeEventListener('keydown', handleMenuKeydown);
+                    mobileMenuButton.focus();
+                };
+
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.contains('hidden') ? openMenu() : closeMenu();
+                });
+
+                focusableElements.forEach(link => link.addEventListener('click', closeMenu));
+            }
+
+            /**
+             * Generic slider initializer.
+             */
+            function initializeSlider(containerSelector, slideSelector, prevSelector, nextSelector, dotsSelector, dotBaseClasses, dotActiveClasses) {
+                const sliderContainer = document.querySelector(containerSelector);
+                if (!sliderContainer) return;
+
+                const slides = Array.from(sliderContainer.querySelectorAll(slideSelector));
+                const prevButton = sliderContainer.querySelector(prevSelector);
+                const nextButton = sliderContainer.querySelector(nextSelector);
+                const dotsContainer = sliderContainer.querySelector(dotsSelector);
+                
+                if (slides.length <= 1) {
+                    [prevButton, nextButton, dotsContainer].forEach(el => el && (el.style.display = 'none'));
+                    return;
+                }
+
+                let currentIndex = 0;
+                let slideInterval = null;
+
+                // Add a pause/play button
+                const playPauseButton = document.createElement('button');
+                playPauseButton.id = 'testimonial-play-pause';
+                playPauseButton.className = 'w-10 h-10 rounded-full bg-blue-500 hover:bg-blue-400 text-white flex items-center justify-center transition focus:outline-none hover:scale-110 ml-3';
+                playPauseButton.setAttribute('aria-label', 'Pause slideshow');
+                playPauseButton.setAttribute('aria-controls', 'testimonial-slider');
+                playPauseButton.innerHTML = '<i class="fa-solid fa-pause"></i>';
+                dotsContainer.parentNode.insertBefore(playPauseButton, dotsContainer.nextSibling); // Insert after dots container
+
+                let isPlaying = true;
+                const liveRegion = document.getElementById('live-region');
+
+                const dots = slides.map((slide, i) => {
+                    const dot = document.createElement('button');
+                    dot.setAttribute('aria-label', `Go to testimonial ${i + 1} of ${slides.length}`);
+                    dot.setAttribute('aria-controls', 'testimonial-slider');
+                    dot.className = dotBaseClasses;
+                    dot.addEventListener('click', () => {
+                        showSlide(i);
+                        resetInterval();
+                        // Announce click for screen readers if not already announced by showSlide
+                        if (liveRegion && !isPlaying) { // Only announce if not auto-playing
+                            liveRegion.textContent = `Showing testimonial ${i + 1} of ${slides.length}.`;
+                        }
+                    });
+                    dotsContainer.appendChild(dot);
+                    return dot;
+                });
+
+                const showSlide = (index) => {
+                    currentIndex = (index + slides.length) % slides.length;
+                    slides.forEach((slide, i) => slide.classList.toggle('opacity-0', i !== currentIndex));
+                    dots.forEach((dot, i) => dot.className = i === currentIndex ? `${dotBaseClasses} ${dotActiveClasses}` : dotBaseClasses);
+                };
+
+                const nextSlide = () => showSlide(currentIndex + 1);
+                const prevSlide = () => showSlide(currentIndex - 1);
+                const startInterval = () => { slideInterval = setInterval(nextSlide, 5000); };
+                const resetInterval = () => { clearInterval(slideInterval); startInterval(); };
+
+                nextButton.addEventListener('click', () => { nextSlide(); resetInterval(); });
+                prevButton.addEventListener('click', () => { prevSlide(); resetInterval(); });
+                sliderContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+                sliderContainer.addEventListener('mouseleave', startInterval);
+
+                showSlide(0);
+                startInterval();
+            }
+
+            // Keyboard navigation for slides (left/right arrows)
+            // Add this event listener to the sliderContainer itself
+            document.querySelector('#testimonials #testimonial-slider').addEventListener('keydown', (e) => {
+                const slider = e.currentTarget;
+                const initializeSliderInstance = window.initializeSliderInstances.get(slider); // Assuming you store instances
+                if (initializeSliderInstance) {
+                    if (e.key === 'ArrowLeft') {
+                        initializeSliderInstance.prevSlide();
+                    } else if (e.key === 'ArrowRight') {
+                        initializeSliderInstance.nextSlide();
+                    }
+                }
+            });
+
+            /**
+             * Sets up Intersection Observers for all scroll-based animations.
+             */
+            function initScrollAnimations() {
+                const animatedElements = document.querySelectorAll('.scroll-animate');
+                if (animatedElements.length > 0) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            entry.target.classList.toggle('is-visible', entry.isIntersecting);
+                        });
+                    }, { threshold: 0.1 });
+                    animatedElements.forEach(el => observer.observe(el));
+                }
+            }
+
+            /**
+             * Sets up the count-up number animations.
+             */
+            function initCountUp() {
+                const countUpElements = document.querySelectorAll('.count-up-number');
+                if (!countUpElements.length) return;
+
+                const animateCountUp = el => {
+                    const target = parseInt(el.dataset.target, 10);
+                    let startTimestamp = null;
+                    const step = timestamp => {
+                        if (!startTimestamp) startTimestamp = timestamp;
+                        const progress = Math.min((timestamp - startTimestamp) / 1500, 1);
+                        el.innerText = Math.floor(progress * (1 - Math.pow(1 - progress, 3)) * target);
+                        if (progress < 1) window.requestAnimationFrame(step);
+                        else el.innerText = target;
+                    };
+                    window.requestAnimationFrame(step);
+                };
+
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateCountUp(entry.target);
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                countUpElements.forEach(el => observer.observe(el));
+            }
+
+            /**
+             * Handles visibility of scroll-dependent UI elements like FABs.
+             */
+            function initScrollDependentUI() {
+                const mainNav = document.getElementById('main-nav');
+                const whatsappFab = document.getElementById('whatsapp-fab');
+                const backToTopButton = document.getElementById('back-to-top');
+                const heroBackground = document.getElementById('hero-background');
+                const aboutImage = document.getElementById('about-image-parallax');
+                let ticking = false;
+
+                function updateUI() {
+                    const scrollY = window.scrollY;
+
+                    // Navbar style change on scroll
+                    if (mainNav) mainNav.classList.toggle('nav-scrolled', scrollY > 50);
+
+                    if (whatsappFab) whatsappFab.classList.toggle('visible', scrollY > 300);
+                    if (backToTopButton) backToTopButton.classList.toggle('visible', scrollY > 400);
+
+                    if (heroBackground && scrollY < window.innerHeight) {
+                        heroBackground.style.transform = `translateY(${scrollY * 0.4}px)`;
+                    }
+
+                    // Parallax effect for the "About Us" image
+                    if (aboutImage) {
+                        const imageContainer = aboutImage.parentElement;
+                        const rect = imageContainer.getBoundingClientRect();
+                        const viewportHeight = window.innerHeight;
+
+                        // Check if the container is roughly in the viewport
+                        if (rect.bottom > 0 && rect.top < viewportHeight) {
+                            const elementCenter = rect.top + rect.height / 2;
+                            const distance = (viewportHeight / 2) - elementCenter;
+                            const parallaxY = distance * -0.05; // A small negative factor creates a subtle parallax effect
+                            aboutImage.style.setProperty('--parallax-y', `${parallaxY}px`);
+                        }
+                    }
+
+                    // Animate timeline progress bar
+                    const timelineContainer = document.querySelector('.timeline-container');
+                    const progressBar = document.getElementById('timeline-progress-bar');
+                    if (timelineContainer && progressBar) {
+                        const containerRect = timelineContainer.getBoundingClientRect();
+                        const viewportHeight = window.innerHeight;
+                        // The point on the screen where the animation should be active
+                        const triggerPoint = viewportHeight * 0.5;
+
+                        // Calculate how far the container's top is from the trigger point
+                        const distance = triggerPoint - containerRect.top;
+
+                        if (distance > 0) {
+                            // Calculate progress as a percentage of the container's height, capped at 100%
+                            const progress = Math.min(distance / containerRect.height, 1);
+                            progressBar.style.height = `${progress * 100}%`;
+                        } else {
+                            progressBar.style.height = '0%';
+                        }
+                    }
+                    ticking = false;
+                }
+
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        window.requestAnimationFrame(updateUI);
+                        ticking = true;
+                    }
+                });
+
+                if (backToTopButton) {
+                    backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+                }
+            }
+
+            /**
+             * Manages the cookie consent banner.
+             */
+            function initCookieConsent() {
+                const cookieBanner = document.getElementById('cookie-consent-banner');
+                const cookieAcceptBtn = document.getElementById('cookie-accept-btn');
+                const COOKIE_CONSENT_KEY = 'skyvex_cookie_consent_given';
+
+                if (cookieBanner && cookieAcceptBtn && !localStorage.getItem(COOKIE_CONSENT_KEY)) {
+                    cookieBanner.classList.add('visible');
+                    cookieAcceptBtn.setAttribute('aria-expanded', 'false');
+                    cookieAcceptBtn.addEventListener('click', () => {
+                        localStorage.setItem(COOKIE_CONSENT_KEY, 'true');
+                        cookieBanner.classList.remove('visible');
+                    }, { once: true });
+                }
+            }
+
+            /**
+             * Handles the lazy loading blur effect for images.
+             */
+            function initLazyLoadEffect() {
+                document.querySelectorAll('.lazy-blur').forEach(img => {
+                    if (img.complete) {
+                        img.classList.add('loaded');
+                    } else {
+                        img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+                    }
+                });
+            }
+
+            /**
+             * Wires up the contact form to Formspree using AJAX.
+             */
+            function initContactForm() {
+                const form = document.getElementById('contact-form');
+                if (!form) return;
+
+                const status = document.getElementById('contact-form-status');
+                if (!status) return;
+
+                async function handleSubmit(event) {
+                    event.preventDefault();
+                    const data = new FormData(event.target);
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    const originalButtonText = submitButton.innerHTML;
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = 'Sending...';
+
+                    try {
+                        const response = await fetch(event.target.action, {
+                            method: form.method,
+                            body: data,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            status.innerHTML = "Thank you! Your message has been sent.";
+                            status.className = 'mt-4 text-center text-green-700 font-semibold p-3 bg-green-100 rounded-lg';
+                            form.reset();
+                        } else {
+                            const responseData = await response.json();
+                            status.innerHTML = responseData.errors?.map(e => e.message).join(', ') || "Oops! There was a problem submitting your form.";
+                            status.className = 'mt-4 text-center text-red-700 font-semibold p-3 bg-red-100 rounded-lg';
+                        }
+                    } catch (error) {
+                        status.innerHTML = "Oops! There was a problem submitting your form.";
+                        status.className = 'mt-4 text-center text-red-700 font-semibold p-3 bg-red-100 rounded-lg';
+                    } finally {
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonText;
+                    }
+                }
+                form.addEventListener("submit", handleSubmit);
+            }
+
+            /**
+             * Initializes the collapsible leadership section.
+             */
+            function initLeadershipToggle() {
+                const toggleBtn = document.getElementById('toggle-leadership-btn');
+                const leadershipSection = document.getElementById('leadership-team');
+                const btnText = document.getElementById('toggle-leadership-text');
+                const btnIcon = document.getElementById('toggle-leadership-icon');
+                const aboutSection = document.getElementById('about'); // The parent section
+
+                if (!toggleBtn || !leadershipSection || !btnText || !btnIcon || !aboutSection) return;
+
+                const closeLeadershipSection = () => {
+                    if (leadershipSection.classList.contains('is-open')) {
+                        leadershipSection.classList.remove('is-open');
+                        toggleBtn.setAttribute('aria-expanded', 'false');
+                        btnIcon.classList.remove('is-open');
+                        btnText.textContent = 'Meet the Team';
+                    }
+                };
+
+                toggleBtn.addEventListener('click', () => {
+                    const isOpen = leadershipSection.classList.toggle('is-open');
+                    toggleBtn.setAttribute('aria-expanded', isOpen);
+                    btnIcon.classList.toggle('is-open');
+                    if (isOpen) {
+                        btnText.textContent = 'Hide the Team';
+                        // Smoothly scroll to the section after it has started opening
+                        setTimeout(() => {
+                            leadershipSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 300); // Delay to allow the transition to start
+                    } else {
+                        btnText.textContent = 'Meet the Team';
+                    }
+                });
+
+                // Observer to close the section when scrolling away from the 'About' section
+                const observer = new IntersectionObserver((entries) => {
+                    // If the about section is NOT visible, close the leadership section
+                    if (!entries[0].isIntersecting) {
+                        closeLeadershipSection();
+                    }
+                }, { threshold: 0 });
+
+                observer.observe(aboutSection);
+            }
+
+            /**
+             * Manages modal accessibility: focus trapping, Escape key, and returning focus on close.
+             * @param {HTMLElement} modalElement - The modal container element.
+             * @param {HTMLElement} triggerElement - The element that opened the modal.
+             * @param {Function} closeModalFunction - The function to call to close the modal.
+             * @returns {Function} A cleanup function to remove event listeners.
+             */
+            function manageModalAccessibility(modalElement, triggerElement, closeModalFunction) {
+                const focusableSelector = 'a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
+                const focusableElements = Array.from(modalElement.querySelectorAll(focusableSelector)).filter(el => !el.disabled);
+                const firstFocusable = focusableElements[0];
+                const lastFocusable = focusableElements[focusableElements.length - 1];
+
+                const handleKeydown = (e) => {
+                    if (e.key === 'Escape') {
+                        closeModalFunction();
+                    }
+                    if (e.key === 'Tab') {
+                        if (e.shiftKey && document.activeElement === firstFocusable) {
+                            e.preventDefault();
+                            lastFocusable?.focus();
+                        } else if (!e.shiftKey && document.activeElement === lastFocusable) {
+                            e.preventDefault();
+                            firstFocusable?.focus();
+                        }
+                    }
+                };
+
+                document.addEventListener('keydown', handleKeydown);
+
+                // Return a cleanup function to be called when the modal closes
+                return () => {
+                    document.removeEventListener('keydown', handleKeydown);
+                    triggerElement?.focus();
+                };
+            }
+
+            /**
+             * Initializes the interactive service details modal.
+             */
+            function initServiceModal() {
+                const modal = document.getElementById('service-modal');
+                const modalBox = document.getElementById('service-modal-box');
+                const closeBtn = document.getElementById('modal-close-btn');
+                const modalTitle = document.getElementById('modal-title');
+                const modalContent = document.getElementById('modal-content');
+                const liveRegion = document.getElementById('live-region');
+                const triggers = document.querySelectorAll('.service-modal-trigger');
+
+                if (!modal || !closeBtn || !modalTitle || !modalContent || triggers.length === 0) return;
+
+                let cleanupAccessibility = () => {};
+
+                const openModal = (trigger) => {
+                    modalTitle.textContent = trigger.dataset.title;
+                    modalContent.innerHTML = trigger.dataset.content;
+
+                    document.body.classList.add('modal-open');
+                    modal.classList.add('is-visible');
+                    modal.setAttribute('aria-hidden', 'false');
+
+                    if (liveRegion) {
+                        liveRegion.textContent = `Modal opened: ${trigger.dataset.title}`;
+                    }
+
+                    closeBtn.focus();
+                    cleanupAccessibility = manageModalAccessibility(modal, trigger, closeModal);
+                };
+
+                const closeModal = () => {
+                    document.body.classList.remove('modal-open');
+                    modal.classList.remove('is-visible');
+                    modal.setAttribute('aria-hidden', 'true');
+                    cleanupAccessibility();
+                };
+
+                triggers.forEach(trigger => {
+                    trigger.addEventListener('click', () => openModal(trigger));
+                });
+
+                closeBtn.addEventListener('click', closeModal); 
+
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeModal();
+                });
+            }
+
+            /**
+             * Initializes the project inquiry modal and form.
+             */
+            function initProjectModal() {
+                const modal = document.getElementById('project-modal');
+                const closeBtn = document.getElementById('project-modal-close-btn');
+                const form = document.getElementById('project-idea-form');
+                const statusDiv = document.getElementById('form-status');
+                const liveRegion = document.getElementById('live-region');
+                const modalTitle = document.getElementById('project-idea-modal-title');
+                const triggers = document.querySelectorAll('.js-project-modal-trigger');
+
+                if (!modal || !form || !statusDiv || triggers.length === 0) return;
+
+                let cleanupAccessibility = () => {};
+                
+                const fields = Array.from(form.querySelectorAll('[name]'));
+
+                const showError = (field, message) => {
+                    const container = field.closest('div');
+                    const errorEl = container.querySelector('.error-message');
+                    if (errorEl) errorEl.textContent = message;
+                    
+                    if (field.type === 'radio') {
+                        container.classList.add('input-error'); // Add error style to the parent of radios
+                    } else {
+                        field.classList.add('input-error');
+                    }
+                };
+
+                const clearError = (field) => {
+                    const container = field.closest('div');
+                    const errorEl = container.querySelector('.error-message');
+                    if (errorEl) errorEl.textContent = '';
+
+                    if (field.type === 'radio') {
+                        container.classList.remove('input-error');
+                    } else {
+                        field.classList.remove('input-error');
+                    }
+                };
+
+                const validateField = (field) => {
+                    let isValid = true;
+                    let message = '';
+
+                    if (field.required) {
+                        if (field.type === 'radio') {
+                            const radioGroup = form.querySelectorAll(`input[name="${field.name}"]`);
+                            if (![...radioGroup].some(r => r.checked)) {
+                                isValid = false;
+                                message = 'Please select an option.';
+                            }
+                        } else if (field.value.trim() === '') {
+                            isValid = false;
+                            message = 'This field is required.';
+                        }
+                    }
+
+                    if (isValid && field.type === 'email') {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(field.value)) {
+                            isValid = false;
+                            message = 'Please enter a valid email address.';
+                        }
+                    }
+
+                    if (!isValid) {
+                        showError(field, message);
+                    } else {
+                        clearError(field);
+                    }
+                    return isValid;
+                };
+
+                const validateForm = () => {
+                    let isFormValid = true;
+                    fields.forEach(field => {
+                        // Only validate one radio button in a group to avoid multiple messages
+                        if (field.type === 'radio' && field.name) {
+                            if (!form.querySelector(`input[name="${field.name}"]`)._validated) {
+                                if (!validateField(field)) isFormValid = false;
+                                form.querySelectorAll(`input[name="${field.name}"]`).forEach(r => r._validated = true);
+                            }
+                        } else if (field.type !== 'radio') {
+                            if (!validateField(field)) isFormValid = false;
+                        }
+                    });
+
+                    // Reset the validation flag for radio buttons
+                    form.querySelectorAll('input[type="radio"]').forEach(r => r._validated = false);
+
+                    return isFormValid;
+                };
+
+                fields.forEach(field => {
+                    field.addEventListener('input', () => validateField(field));
+                    if (field.tagName === 'SELECT') {
+                        field.addEventListener('change', () => validateField(field));
+                    }
+                });
+
+                async function handleSubmit(event) {
+                    event.preventDefault();
+                    if (!validateForm()) {
+                        statusDiv.innerHTML = "Please correct the errors above.";
+                        statusDiv.className = 'mt-4 text-center text-red-700 font-semibold';
+                        return;
+                    }
+
+                    const data = new FormData(event.target);
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    const originalButtonText = submitButton.innerHTML;
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Submitting...';
+                    statusDiv.innerHTML = ''; // Clear previous status
+
+                    try {
+                        const response = await fetch(event.target.action, {
+                            method: form.method,
+                            body: data,
+                            headers: { 'Accept': 'application/json' }
+                        });
+                        if (response.ok) {
+                            statusDiv.innerHTML = "Thank you! We've received your idea and will be in touch soon.";
+                            statusDiv.className = 'mt-4 text-center text-green-700 font-semibold p-3 bg-green-100 rounded-lg';
+                            form.reset();
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        statusDiv.innerHTML = "Oops! There was a problem submitting your form. Please try again or contact us directly.";
+                        statusDiv.className = 'mt-4 text-center text-red-700 font-semibold p-3 bg-red-100 rounded-lg';
+                    } finally {
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonText;
+                    }
+                }
+                form.addEventListener("submit", handleSubmit);
+
+                // Modal open/close logic
+                const openModal = (trigger) => {
+                    document.body.classList.add('modal-open');
+                    modal.classList.add('is-visible');
+                    modal.setAttribute('aria-hidden', 'false');
+                    if (liveRegion && modalTitle) {
+                        liveRegion.textContent = `Modal opened: ${modalTitle.textContent}`;
+                    }
+                    const firstInput = form.querySelector('input[name="name"]');
+                    firstInput?.focus();
+                    cleanupAccessibility = manageModalAccessibility(modal, trigger, closeModal);
+                };
+
+                const closeModal = () => {
+                    document.body.classList.remove('modal-open');
+                    modal.classList.remove('is-visible');
+                    modal.setAttribute('aria-hidden', 'true');
+                    fields.forEach(clearError); // Clear errors when closing
+                    statusDiv.innerHTML = '';
+                    cleanupAccessibility();
+                };
+
+                triggers.forEach(trigger => trigger.addEventListener('click', () => openModal(trigger)));
+                if (closeBtn) closeBtn.addEventListener('click', closeModal);
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeModal();
+                });
+            }
+
+            /**
+             * Main initialization function
+             */
+            function init() {
+                initCopyrightYear();
+                initSmoothScroll();
+                initMobileMenu();
+                initNavObserver();
+                // Store slider instances if you have multiple, otherwise direct call is fine
+                // For now, let's make it callable directly.
+                initializeSlider('#testimonials', '.testimonial-slide', '#testimonial-prev', '#testimonial-next', '#testimonial-dots', 'w-3 h-3 rounded-full bg-blue-400 hover:bg-white transition', 'bg-white'); 
+
+                initScrollAnimations();
+                initCountUp();
+                initScrollDependentUI();
+                initCookieConsent();
+                initLazyLoadEffect();
+                initContactForm();
+                initLeadershipToggle();
+                initServiceModal();
+                initProjectModal();
+            }
+
+            // Run initialization
+            initPreloader();
+            document.addEventListener('DOMContentLoaded', init);
+
+        })();
+    </script>
 </body>
 </html>
